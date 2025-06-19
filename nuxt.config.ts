@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   modules: [
     'vuetify-nuxt-module',
     '@nuxtjs/google-fonts',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots'
   ]
 })
