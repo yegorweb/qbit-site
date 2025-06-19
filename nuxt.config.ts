@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/robots'
   ],
+  css: ['~/assets/styles/main.scss'],
   
   app: {
     head: {
