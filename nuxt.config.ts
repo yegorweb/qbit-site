@@ -28,6 +28,8 @@ export default defineNuxtConfig({
     }
   },
 
+  ssr: false,
+
   site: { 
     url: 'https://qbit-club.com', 
     name: 'Клуб Кубит' 
