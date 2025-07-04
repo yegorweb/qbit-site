@@ -14,8 +14,5 @@ useSeoMeta({
 </script>
 
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+  <NuxtLayout />
 </template>
