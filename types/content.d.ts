@@ -1,8 +1,9 @@
 declare global {
 	interface Content {
-	  webdevinfo: string,
-    drawinginfo: string,
-    scratchinfo: string,
+    qbit: string
+	  webdevinfo: string
+    drawinginfo: string
+    scratchinfo: string
     javainfo: string
   }
 }
