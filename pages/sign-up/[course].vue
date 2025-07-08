@@ -132,7 +132,6 @@ let submit = handleSubmit(async values => {
               :class="{'mt-3':submited&&!!phone.errorMessage.value}"
               color="primary"
               density="comfortable"
-              :center-affix="false"
             >
               <template v-slot:label>
                 <div>Даю <a
