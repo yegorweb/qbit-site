@@ -135,7 +135,12 @@ let submit = handleSubmit(async values => {
               :center-affix="false"
             >
               <template v-slot:label>
-                <span>Согласие на обработку персональных данных</span>
+                <div>Даю <a
+                  href="/agreement"
+                  style="text-decoration: none;"
+                  target="_blank"
+                  @click.stop
+                >согласие на обработку персональных данных</a></div>
               </template>
             </v-checkbox>
 
