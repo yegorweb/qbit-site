@@ -152,7 +152,7 @@ let submit = handleSubmit(async values => {
         </div>
       </v-col>
 
-      <v-col v-if="useDisplay().mdAndUp.value" md="6" lg="8">
+      <v-col cols="12" md="6" lg="8">
         <BlockTitle>О курсе</BlockTitle>
         <div v-html="content[contentKeys.get(course)!]" />
       </v-col>
