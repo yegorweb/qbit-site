@@ -55,7 +55,7 @@ useHead({
         </div>
       </v-col>
 
-      <v-col v-if="useDisplay().mdAndUp.value" md="6" lg="8">
+      <v-col cols="12" md="6" lg="8">
         <BlockTitle style="margin-bottom: 10px;">О клубе</BlockTitle>
 
         <AboutUs />
