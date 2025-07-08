@@ -19,6 +19,8 @@ const courseNames = new Map<Course, string>([
 ])
 if (!courseNames.get(course)) showError({ statusCode: 404, message: 'Курс не найден' })
 
+let contentKeys = new Map<Course, keyof Content>([['web-dev', 'webdevinfo'], ['drawing', 'drawinginfo'], ['scratch', 'scratchinfo'], ['java', 'javainfo']])
+
 let submited = ref(false)
 
 let { handleSubmit } = useForm({
@@ -152,7 +154,7 @@ let submit = handleSubmit(async values => {
 
       <v-col v-if="useDisplay().mdAndUp.value" md="6" lg="8">
         <BlockTitle>О курсе</BlockTitle>
-        {{ content.webdevinfo }}
+        <div v-html="content[contentKeys.get(course)!]" />
       </v-col>
     </v-row>
   </v-container>
