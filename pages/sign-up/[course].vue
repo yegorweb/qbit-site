@@ -158,7 +158,9 @@ let submit = handleSubmit(async values => {
 
       <v-col cols="12" md="6" lg="8">
         <BlockTitle>О курсе</BlockTitle>
-        <div v-html="content[contentKeys.get(course)!]" />
+        <ClientOnly>
+          <div v-html="content[contentKeys.get(course)!]" />
+        </ClientOnly>
       </v-col>
     </v-row>
   </v-container>

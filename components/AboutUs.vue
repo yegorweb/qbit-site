@@ -3,7 +3,9 @@ let content = useContent()
 </script>
 
 <template>
-  <div v-html="content.qbit" />
+  <ClientOnly>
+    <div v-html="content.qbit" />
+  </ClientOnly>
 </template>
 
 <style lang="scss" scoped>
