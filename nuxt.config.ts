@@ -2,6 +2,8 @@
 
 import { ru } from 'vuetify/locale'
 
+const courses = ['web-dev', 'scratch', 'java', 'drawing']
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
@@ -12,6 +14,10 @@ export default defineNuxtConfig({
     '@nuxtjs/robots'
   ],
   css: ['~/assets/styles/main.scss'],
+
+  features: {
+    inlineStyles: false
+  },
   
   app: {
     head: {
@@ -28,32 +34,18 @@ export default defineNuxtConfig({
     }
   },
 
-  ssr: false,
-
   site: { 
     url: 'https://qbit-club.com', 
     name: 'Клуб Кубит' 
   }, 
 
-  routeRules: {
-    '/': { prerender: true },
-  },
-
-  build: {
-    transpile: ['vuetify'],
-  },
-
-  vite: {
-    ssr: {
-      noExternal: ['vue-router']
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler',
-        },
-      },
-    },
+  generate: {
+    routes: [
+      '/',
+      '/about-us',
+      '/agreement',
+      ...courses.map(course => `/sign-up/${course}`),
+    ]
   },
 
   robots: {
@@ -98,7 +90,19 @@ export default defineNuxtConfig({
       },
       icons: {
         defaultSet: 'mdi-svg',
-      }
+      },
+      components: [
+        'VBtn', 
+        'VTextField', 
+        'VNumberInput', 
+        'VApp',
+        'VContainer',
+        'VSpacer',
+        'VRow',
+        'VCol',
+        'VForm',
+        'VCheckbox'
+      ],
     }
   },
 
