@@ -11,6 +11,16 @@ useSeoMeta({
   twitterCard: 'summary',
   applicationName: 'Клуб Кубит',
 })
+
+useHead({
+  link: [
+    {
+      rel: 'preload',
+      href: '/content.json',
+      as: 'fetch',
+    },
+  ],
+})
 </script>
 
 <template>
