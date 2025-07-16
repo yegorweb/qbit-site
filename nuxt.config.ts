@@ -91,18 +91,6 @@ export default defineNuxtConfig({
       icons: {
         defaultSet: 'mdi-svg',
       },
-      components: [
-        'VBtn', 
-        'VTextField', 
-        'VNumberInput', 
-        'VApp',
-        'VContainer',
-        'VSpacer',
-        'VRow',
-        'VCol',
-        'VForm',
-        'VCheckbox'
-      ],
     }
   },
 
