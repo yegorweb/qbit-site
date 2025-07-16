@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
+import type { SitemapUrlInput } from '@nuxtjs/sitemap'
 import { ru } from 'vuetify/locale'
 
 const courses = ['web-dev', 'scratch', 'java', 'drawing']
@@ -50,13 +51,21 @@ export default defineNuxtConfig({
 
   robots: {
     groups: [
-      { userAgent: '*', allow: '/' },
+      { 
+        userAgent: '*', 
+        disallow: '/', 
+        allow: [
+          '/$',
+          ...courses.map(course => `/sign-up/${course}$`),
+        ]
+      },
     ]
   },
 
   sitemap: {
     urls: [
-      { loc: '/', lastmod: new Date().toISOString(), priority: 1, changefreq: 'weekly' },
+      { loc: '/', priority: 1, changefreq: 'daily' },
+      ...(courses.map(course => ({ loc: `/sign-up/${course}`, priority: 0.8, changefreq: 'daily' })) as SitemapUrlInput[]),
     ]
   },
 
