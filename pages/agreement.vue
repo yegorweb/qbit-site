@@ -4,7 +4,7 @@
 
 <template>
   <v-container>
-    <BlockTitle>Согласие об обработке персональных данных</BlockTitle>
+    <BlockTitle>Согласие на обработку персональных данных</BlockTitle>
 
     <p>
       
