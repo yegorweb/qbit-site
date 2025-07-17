@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <v-container>
+  <v-container class="page-container">
     <BlockTitle>Согласие на обработку персональных данных</BlockTitle>
 
     <p>

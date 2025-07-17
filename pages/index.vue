@@ -31,7 +31,7 @@ useHead({
 </script>
 
 <template>
-  <v-container>
+  <v-container class="page-container">
     <v-row>
       <v-col cols="12" sm="8" md="6" lg="4">
         <BlockTitle>Выбери курс</BlockTitle>
