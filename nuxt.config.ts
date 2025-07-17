@@ -92,6 +92,9 @@ export default defineNuxtConfig({
           class: 'text-body-2',
           style: 'border-radius: 8px;'
         },
+        VCheckboxBtn: {
+          style: 'align-items: start !important; gap: 4px;'
+        },
         global: {
           ripple: false,
           elevation: 0,
