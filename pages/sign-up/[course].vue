@@ -163,6 +163,10 @@ let submit = handleSubmit(async values => {
 </template>
 
 <style lang="scss" scoped>
+.form > * {
+  transition: all .15s;
+}
+
 .card-flex {
   display: flex;
   flex-direction: column;
