@@ -4,8 +4,8 @@
 
 <template>
   <v-app style="min-height: 100vh;">
-    <div style="background: #FFFFFF; position: fixed; top: 0; left: 0; right: 0; height: 60px; z-index: 999;">
       <v-container class="d-flex align-center justify-space-between user-select-none"
+    <div style="background: #FFFFFF; position: sticky; top: 0; left: 0; right: 0; height: 60px; z-index: 999;">
         style="height: 60px; position: relative;">
         <div @click="navigateTo('/')" class="d-flex flex-row align-center cursor-pointer logo">
           <svg style="width: auto;" height="48" viewBox="0 0 225 250" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +32,6 @@
         </div>
       </v-container>
     </div>
-    <div style="height: 60px;"></div>
 
     <NuxtPage />
 
