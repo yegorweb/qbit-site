@@ -91,7 +91,7 @@ let submit = handleSubmit(async values => {
 </script>
 
 <template>
-  <v-container>
+  <v-container class="page-container">
     <v-row>
       <v-col cols="12" sm="8" md="6" lg="4">
         <BlockTitle>Курс по {{ titleCourseNames.get(course as Course) }}</BlockTitle>

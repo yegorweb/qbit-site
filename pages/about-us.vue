@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <v-container>
+  <v-container class="page-container">
     <AboutUs />
   </v-container>
 </template>
