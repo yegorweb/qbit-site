@@ -17,6 +17,13 @@ const courseNames = new Map<Course, string>([
   ['scratch', 'Scratch'],
   ['java', 'Java'],
 ])
+const titleCourseNames = new Map<Course, string>([
+  ['web-dev', 'веб-разработке'], 
+  ['drawing', 'цифровой живописи'], 
+  ['scratch', 'Scratch'],
+  ['java', 'Java'],
+])
+
 if (!courseNames.get(course)) showError({ statusCode: 404, message: 'Курс не найден' })
 
 let contentKeys = new Map<Course, keyof Content>([['web-dev', 'webdevinfo'], ['drawing', 'drawinginfo'], ['scratch', 'scratchinfo'], ['java', 'javainfo']])
@@ -87,7 +94,7 @@ let submit = handleSubmit(async values => {
   <v-container>
     <v-row>
       <v-col cols="12" sm="8" md="6" lg="4">
-        <BlockTitle>Запись на «{{ courseNames.get(course as Course) }}»</BlockTitle>
+        <BlockTitle>Курс по {{ titleCourseNames.get(course as Course) }}</BlockTitle>
 
         <div class="card card-info" style="padding-top: 20px; margin-top: 10px;">
           <v-form @submit.prevent="submit">
