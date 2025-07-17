@@ -4,6 +4,8 @@
 
 <template>
   <v-container class="page-container">
+    <BackButton />
+
     <AboutUs />
   </v-container>
 </template>

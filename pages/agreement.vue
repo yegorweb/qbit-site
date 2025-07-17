@@ -4,6 +4,8 @@
 
 <template>
   <v-container class="page-container">
+    <BackButton />
+    
     <BlockTitle>Согласие на обработку персональных данных</BlockTitle>
 
     <p>
