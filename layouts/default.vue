@@ -8,7 +8,7 @@
       <v-container class="d-flex align-center justify-space-between user-select-none"
         style="height: 60px; position: relative;">
         <div @click="navigateTo('/')" class="d-flex flex-row align-center cursor-pointer logo">
-          <svg style="width: auto;" width="auto" height="48" viewBox="0 0 225 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg style="width: auto;" height="48" viewBox="0 0 225 250" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_1_80)">
           <path d="M108.582 1.20098C111.015 -0.165887 113.985 -0.165892 116.418 1.20097L220.568 59.707C223.09 61.1233 224.65 63.79 224.65 66.6819V183.318C224.65 186.21 223.09 188.877 220.568 190.293L116.418 248.799C113.985 250.166 111.015 250.166 108.582 248.799L4.43161 190.293C1.91036 188.877 0.349709 186.21 0.349709 183.318V66.6819C0.349709 63.79 1.91036 61.1233 4.43161 59.707L108.582 1.20098Z" fill="#334064"/>
           <path d="M112.5 17L209.062 71V179L112.5 233L15.9382 179V71L112.5 17Z" fill="white"/>
