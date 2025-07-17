@@ -148,10 +148,6 @@ let submit = handleSubmit(async values => {
               type="submit"
               :class="{'w-100':true,'mt-3':submited&&!!consent.errorMessage.value,'bg-primary':true}" 
             >Записаться</v-btn>
-            <v-btn 
-              @click="submited = false"
-              class="w-100 mt-1" 
-            >На главную</v-btn>
           </v-form>
         </div>
       </v-col>
