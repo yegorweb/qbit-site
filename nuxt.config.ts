@@ -53,10 +53,10 @@ export default defineNuxtConfig({
     groups: [
       { 
         userAgent: '*', 
-        disallow: '/', 
+        disallow: ['/about-us', '/agreement'], 
         allow: [
-          '/$',
-          ...courses.map(course => `/sign-up/${course}$`),
+          '/',
+          ...courses.map(course => `/sign-up/${course}`),
         ]
       },
     ]
