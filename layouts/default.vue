@@ -43,7 +43,7 @@
           <div 
             @click="navigateTo('/agreement')" 
             style="padding: 6px; cursor: pointer; color: #8E8E8E;"
-          >Согласие об обработке персональных данных</div>
+          >Согласие на обработку персональных данных</div>
         </div>
       </v-container>
     </footer>
