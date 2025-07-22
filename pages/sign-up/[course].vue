@@ -104,7 +104,7 @@ function submit() {
     <v-row>
       <v-col cols="12" md="auto">
         <div class="card card-info" style="padding-top: 20px">
-          <v-form @submit.prevent="submit">
+          <v-form @submit.prevent="submit" class="form">
             <v-text-field
               v-model="fullname.value.value"
               :error-messages="submited?fullname.errorMessage.value:undefined"
@@ -183,6 +183,10 @@ function submit() {
       min-width: 365px;
     }
   }
+}
+
+.form > * {
+  transition: all .15s;
 }
 
 .card-flex {
