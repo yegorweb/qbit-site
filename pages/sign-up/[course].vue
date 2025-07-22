@@ -99,11 +99,11 @@ function submit() {
   <v-container class="page-container">
     <BackButton />
 
-    <v-row>
-      <v-col cols="12" sm="8" md="6" lg="4">
-        <BlockTitle>Курс по {{ titleCourseNames.get(course as Course) }}</BlockTitle>
+    <BlockTitle>Курс по {{ titleCourseNames.get(course as Course) }}</BlockTitle>
 
-        <div class="card card-info" style="padding-top: 20px; margin-top: 10px;">
+    <v-row>
+      <v-col cols="12" md="auto">
+        <div class="card card-info" style="padding-top: 20px">
           <v-form @submit.prevent="submit">
             <v-text-field
               v-model="fullname.value.value"
@@ -165,8 +165,7 @@ function submit() {
         </div>
       </v-col>
 
-      <v-col cols="12" md="6" lg="8">
-        <BlockTitle>О курсе</BlockTitle>
+      <v-col cols="12" md="auto">
         <ClientOnly>
           <div v-html="content[contentKeys.get(course)!]" />
         </ClientOnly>
@@ -176,6 +175,16 @@ function submit() {
 </template>
 
 <style lang="scss" scoped>
+.card {
+  max-width: 365px;
+
+  @media screen and (width >= 960px) {
+    & {
+      min-width: 365px;
+    }
+  }
+}
+
 .card-flex {
   display: flex;
   flex-direction: column;
