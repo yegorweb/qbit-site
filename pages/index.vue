@@ -113,12 +113,12 @@ useHead({
   }
 
   &-name {
-    font-size: 19px;
+    font-size: clamp(0.875rem, -0.375rem + 6.25vw, 1.1875rem);  
     font-weight: 700;
   }
 
   &-description {
-    font-size: 14px;
+    font-size: clamp(0.625rem, -0.375rem + 5vw, 0.875rem);
     color: #3E3E3E;
   }
 
