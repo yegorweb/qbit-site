@@ -39,7 +39,8 @@ let { handleSubmit } = useForm({
   },
   validationSchema: {
     fullname(value: string) {
-      if (!value || value.length <= 3) return 'мало'
+      if (!value) return 'заполните'
+      if (value.length <= 3) return 'мало'
       if (value.length > 30) return 'много'
       return true
     },
