@@ -33,7 +33,7 @@ useHead({
 <template>
   <v-container class="page-container">
     <v-row>
-      <v-col cols="12" sm="8" md="6" lg="4">
+      <v-col cols="12" md="auto">
         <BlockTitle>Выбери курс</BlockTitle>
         <div class="card card-flex">
           <div class="course" id="web-dev" @click="navigateTo('/sign-up/web-dev')">
@@ -55,7 +55,7 @@ useHead({
         </div>
       </v-col>
 
-      <v-col cols="12" md="6" lg="8">
+      <v-col cols="12" md="auto">
         <BlockTitle style="margin-bottom: 10px;">О клубе</BlockTitle>
 
         <AboutUs />
@@ -65,6 +65,16 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
+.card {
+  max-width: 365px;
+
+  @media screen and (width >= 960px) {
+    & {
+      min-width: 365px;
+    }
+  }
+}
+
 .card-flex {
   display: flex;
   flex-direction: column;
