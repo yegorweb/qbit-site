@@ -4,10 +4,6 @@ import { usePhoneInput } from '~/utils/phone-input'
 
 let content = useContent()
 
-const tabs = ['choise', 'info-web-dev', 'info-scratch', 'info-java', 'info-drawing', 'sign-up', 'error', 'success'] as const
-type Tab = typeof tabs[number]
-let tab = useState<Tab>('tab', () => 'choise')
-
 const courses = ['web-dev', 'scratch', 'java', 'drawing'] as const
 type Course = typeof courses[number]
 let course = useRoute().params.course as Course
