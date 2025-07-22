@@ -124,6 +124,8 @@ function submit() {
               placeholder="14"
               variant="outlined"
               density="compact"
+              pattern="[0-9]*" 
+              inputmode="numeric"
               autocomplete="off"
             />
 
