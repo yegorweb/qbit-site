@@ -68,7 +68,7 @@ let consent = useField<boolean>('consent')
 
 onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: string) => phone.value.value = value))
 
-let submit = handleSubmit(async values => {
+let submitForm = handleSubmit(async values => {
   let body = {
     'Курс': courseNames.get(course as Course),
     'Имя': values.fullname,
@@ -89,6 +89,10 @@ let submit = handleSubmit(async values => {
   })
   let resjson = await response.json()
 })
+function submit() {
+  submited.value = true
+  submitForm()
+}
 </script>
 
 <template>
@@ -154,7 +158,6 @@ let submit = handleSubmit(async values => {
             </v-checkbox>
 
             <v-btn 
-              @click="submited = true"
               type="submit"
               :class="{'w-100':true,'mt-3':submited&&!!consent.errorMessage.value,'bg-primary':true}" 
             >Записаться</v-btn>
