@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { mdiCheck, mdiClose, mdiReload } from '@mdi/js'
 import { useField, useForm } from 'vee-validate'
 import { usePhoneInput } from '~/utils/phone-input'
 
@@ -26,7 +27,7 @@ let contentKeys = new Map<Course, keyof Content>([['web-dev', 'webdevinfo'], ['d
 
 let submited = ref(false)
 
-let { handleSubmit } = useForm({
+let { handleSubmit, handleReset } = useForm({
   initialValues: {
     fullname: '',
     phone: '',
@@ -64,30 +65,53 @@ let consent = useField<boolean>('consent')
 
 onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: string) => phone.value.value = value))
 
+let loading = ref(false)
+let showSuccessPopup = ref(false)
+let showErrorPopup = ref(false)
+
 let submitForm = handleSubmit(async values => {
+  loading.value = true
+  showErrorPopup.value = false
+  showSuccessPopup.value = false
+
   let body = {
     'Курс': courseNames.get(course as Course),
     'Имя': values.fullname,
     'Возраст': `${values.age} лет`,
     'Телефон': `<a href="tel:${values.phone.replaceAll(/\D/g, '')}">${values.phone}</a>`
   }
-  let response = await fetch('https://api.formtomail.ru/send', {
-    method: 'POST',
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      title: 'Новый ученик',
-      body,
-      apiKey: 'QOFyBYCZchPEfaD3'
+  try {
+    let response = await fetch('https://api.formtomail.ru/send', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        title: 'Новый ученик',
+        body,
+        apiKey: 'QOFyBYCZchPEfaD3'
+      })
     })
-  })
-  let resjson = await response.json()
+    if (response.status === 200) {
+      showSuccessPopup.value = true
+      reset()    
+    } else {
+      showErrorPopup.value = true
+    }
+  } catch (error) {
+    showErrorPopup.value = true
+  }
+  loading.value = false
 })
 function submit() {
   submited.value = true
   submitForm()
+}
+
+function reset() {
+  submited.value = false
+  handleReset()
 }
 </script>
 
@@ -157,6 +181,7 @@ function submit() {
 
             <v-btn 
               type="submit"
+              :loading="loading"
               :class="{'w-100':true,'mt-3':submited&&!!consent.errorMessage.value,'bg-primary':true}" 
             >Записаться</v-btn>
           </v-form>
@@ -170,6 +195,43 @@ function submit() {
       </v-col>
     </v-row>
   </v-container>
+
+  <v-dialog v-model="showSuccessPopup" max-width="450">
+    <template v-slot:default="{ isActive }">
+      <div class="d-flex flex-column justify-center align-center" style="margin-top: -30px;">
+        <v-icon size="70" color="white" class="bg-green" :icon="mdiCheck" style="margin-bottom: -30px; z-index: 999; padding: 10px; border-radius: 999px;"></v-icon>
+        
+        <v-card class="status-card rounded-lg" style="padding: 10px 24px;">
+          <div class="mt-6 text-center">
+            <span style="font-weight: 500; font-size: 24px;">Вы записаны</span><br/>
+            <span style="font-weight: 400; font-size: 15px;">Скоро мы вам позвоним</span>
+          </div>
+  
+          <v-btn @click="isActive.value = false" class="bg-grey-lighten-3 mt-5">Закрыть</v-btn>
+        </v-card>
+      </div>
+    </template>
+  </v-dialog>
+
+  <v-dialog v-model="showErrorPopup">
+    <template v-slot:default="{ isActive }">
+      <div class="d-flex flex-column justify-center align-center" style="margin-top: -30px;">
+        <v-icon size="70" color="white" class="bg-red" :icon="mdiClose" style="margin-bottom: -30px; z-index: 999; padding: 10px; border-radius: 999px;"></v-icon>
+        
+        <v-card class="status-card" style="padding: 14px; border-radius: 16px;">
+          <div class="mt-5 text-center">
+            <span style="font-weight: 500; font-size: 24px;">Ошибка</span><br/>
+            <span style="font-weight: 400; font-size: 15px;">Не удалось отправить форму</span>
+          </div>
+  
+          <div class="d-flex mt-5 flex-wrap flex-row align-center justify-center" style="gap: 5px;">
+            <v-btn @click="submit()" :prepend-icon="mdiReload" class="bg-grey-lighten-3">Повторить</v-btn>
+            <v-btn @click="isActive.value = false" class="bg-grey-lighten-3">Закрыть</v-btn>
+          </div>
+        </v-card>
+      </div>
+    </template>
+  </v-dialog>
 </template>
 
 <style lang="scss" scoped>
@@ -181,6 +243,13 @@ function submit() {
       min-width: 365px;
     }
   }
+}
+
+.status-card {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
 .form > * {
