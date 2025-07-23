@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { mdiCheck, mdiClose, mdiReload } from '@mdi/js'
 import { useField, useForm } from 'vee-validate'
-import { usePhoneInput } from '~/utils/phone-input'
 
 let content = useContent()
 
 const courses = ['web-dev', 'scratch', 'java', 'drawing'] as const
 type Course = typeof courses[number]
 let course = useRoute().params.course as Course
+
 const courseNames = new Map<Course, string>([
   ['web-dev', 'Веб-разработка'], 
   ['drawing', 'Цифровая живопись'], 
@@ -20,12 +20,9 @@ const titleCourseNames = new Map<Course, string>([
   ['scratch', 'Scratch'],
   ['java', 'Java'],
 ])
-
-if (!courseNames.get(course)) showError({ statusCode: 404, message: 'Курс не найден' })
-
 let contentKeys = new Map<Course, keyof Content>([['web-dev', 'webdevinfo'], ['drawing', 'drawinginfo'], ['scratch', 'scratchinfo'], ['java', 'javainfo']])
 
-let submited = ref(false)
+if (!courseNames.get(course)) showError({ statusCode: 404, message: 'Курс не найден' })
 
 let { handleSubmit, handleReset } = useForm({
   initialValues: {
@@ -65,6 +62,7 @@ let consent = useField<boolean>('consent')
 
 onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: string) => phone.value.value = value))
 
+let submited = ref(false)
 let loading = ref(false)
 let showSuccessPopup = ref(false)
 let showErrorPopup = ref(false)
@@ -104,6 +102,7 @@ let submitForm = handleSubmit(async values => {
   }
   loading.value = false
 })
+
 function submit() {
   submited.value = true
   submitForm()
