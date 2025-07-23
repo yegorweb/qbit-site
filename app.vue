@@ -18,6 +18,7 @@ useHead({
       rel: 'preload',
       href: '/content.json',
       as: 'fetch',
+      crossorigin: 'anonymous',
     },
   ],
 })
