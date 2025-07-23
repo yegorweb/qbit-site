@@ -21,3 +21,13 @@ input:-webkit-autofill:active{
   padding-top: 12px !important;
   padding-bottom: 0 !important;
 }
+
+::selection {
+  background: #334064;
+  color: white;
+}
+
+::-moz-selection {
+  background: #334064;
+  color: white;
+}
