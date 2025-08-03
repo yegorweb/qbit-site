@@ -31,8 +31,8 @@ useHead({
 </script>
 
 <template>
-  <v-container class="page-container">
-    <v-row>
+  <v-container class="page-container d-flex flex-column justify-space-between align-">
+    <v-row class="flex-grow-0">
       <v-col cols="12" md="auto">
 
         <div class="card card-flex">
@@ -55,16 +55,17 @@ useHead({
         </div>
       </v-col>
       <AboutUs />
-      <v-col cols="12" md="auto">
-
-
-
-      </v-col>
+    </v-row>
+    <v-row class="flex-grow-0">
+      <Projects />
     </v-row>
   </v-container>
 </template>
 
 <style lang="scss" scoped>
+.page-container{
+  min-height: 85dvh;
+} 
 .card {
   max-width: 100%;
 

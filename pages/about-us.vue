@@ -7,6 +7,7 @@
     <BackButton />
 
     <AboutUs />
+ 
   </v-container>
 </template>
 
