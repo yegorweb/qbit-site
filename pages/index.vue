@@ -34,7 +34,7 @@ useHead({
   <v-container class="page-container">
     <v-row>
       <v-col cols="12" md="auto">
-        <BlockTitle>Выбери курс</BlockTitle>
+
         <div class="card card-flex">
           <div class="course" id="web-dev" @click="navigateTo('/sign-up/web-dev')">
             <div class="course-name">Веб-разработка</div>
@@ -54,11 +54,11 @@ useHead({
           </div>
         </div>
       </v-col>
-
+      <AboutUs />
       <v-col cols="12" md="auto">
-        <BlockTitle style="margin-bottom: 10px;">О клубе</BlockTitle>
 
-        <AboutUs />
+
+
       </v-col>
     </v-row>
   </v-container>
@@ -66,9 +66,9 @@ useHead({
 
 <style lang="scss" scoped>
 .card {
-  max-width: 365px;
+  max-width: 100%;
 
-  @media screen and (width >= 960px) {
+  @media screen and (width >=960px) {
     & {
       min-width: 365px;
     }
@@ -107,13 +107,14 @@ useHead({
   gap: 0px;
   cursor: pointer;
 
-  &, & * {
+  &,
+  & * {
     user-select: none;
     transition: all 0.2s;
   }
 
   &-name {
-    font-size: clamp(0.875rem, -0.375rem + 6.25vw, 1.1875rem);  
+    font-size: clamp(0.875rem, -0.375rem + 6.25vw, 1.1875rem);
     font-weight: 700;
   }
 
