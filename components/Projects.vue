@@ -61,7 +61,7 @@ const projects = ref([
         <div class="title text-center ma-4">
             Сделано нами
         </div>
-        <div style="overflow: scroll;" class="d-flex  justify-center ga-10">
+        <div style="overflow: scroll;" class="d-flex ga-10">
             <a v-for="project in projects" :href="project.url" target="_blank" style="text-decoration: none;">
                 <div class="text-center"> <img :src="project.logo" alt=""></div>
                 <div class="description"> {{ project.description }}</div>
