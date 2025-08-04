@@ -11,21 +11,16 @@ let content = useContent()
         <div class="course-description">
           <div>
             <i>
-              "Нет никакой волшебной палочки. 
-               Только затраченное время и увлеченность может открыть путь к знаниям и
+              "Нет никакой волшебной палочки.
+              Только затраченное время и увлеченность может открыть путь к знаниям и
               умениям.
               Только ваши старания помогут вам стать художником, дизайнером или программистом.
-              Мы поможем вам пройти по этому пути максимально интересно."
+              Мы вместе пройдем по этому пути максимально интересно."
             </i>
-
           </div>
-
-          <div class="text-end">
-            <v-avatar image="../assets/images/roman.webp" size="70" class="ma-4"></v-avatar> <b>Грачев Роман</b>
-          </div>
-
-
-
+        </div>
+        <div class="text-end">
+          <v-avatar image="../assets/images/roman.webp" size="60" class="ma-2"></v-avatar> <b>Грачев Роман</b>
         </div>
       </div>
 
@@ -56,7 +51,7 @@ let content = useContent()
 
 .image {
   min-height: 300px;
-  background-image: url('../assets/images/about-qbit.webp');
+  background-image: url('../assets/images/about-qbit.jpg');
   border-radius: 8.59px;
   width: 100%;
   padding: 12px 18px;
@@ -86,6 +81,10 @@ let content = useContent()
   width: 100%;
   padding: 12px 18px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 
 
   &,

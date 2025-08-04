@@ -2,6 +2,12 @@
 
 import logoPlpo from '~/assets/images/plpo.png'
 import logoGiv from '~/assets/images/giv.png'
+import logoLocation from '~/assets/images/location21.png'
+import logoLibrary from '~/assets/images/library.png'
+import logoTorgOb from '~/assets/images/pos-qbit.png'
+import logoFormtomail from '~/assets/images/stamp.svg'
+import logoGlazovest from '~/assets/images/glazov-est.png'
+import logoUpVk from '~/assets/images/up-vk.png'
 
 const projects = ref([
     {
@@ -13,27 +19,41 @@ const projects = ref([
         description: "туристический портал",
         logo: logoGiv,
         url: "https://gorodaivesi.ru/"
-    },
-       {
-        description: "публикация афиш",
-        logo: logoPlpo,
-        url: "https://plpo.ru/posters"
+
     },
     {
-        description: "туристический портал",
-        logo: logoGiv,
-        url: "https://gorodaivesi.ru/"
-    },
-       {
-        description: "публикация афиш",
-        logo: logoPlpo,
-        url: "https://plpo.ru/posters"
+        description: "маркетплейс доставки",
+        logo: logoGlazovest,
+        url: "https://glazovest.ru"
     },
     {
-        description: "туристический портал",
-        logo: logoGiv,
-        url: "https://gorodaivesi.ru/"
+        description: "отправка форм",
+        logo: logoFormtomail,
+        url: "https://formtomail.ru"
     },
+    {
+        description: "промо подписчикам",
+        logo: logoUpVk,
+        url: "https://up-vk.ru"
+    },
+    {
+        description: "автоматизация торговли",
+        logo: logoTorgOb,
+        url: "https://qbit-torgob.ru"
+    },
+    {
+        description: "библиотека",
+        logo: logoLibrary,
+        url: "https://lib.qbit-club.com"
+    },
+    {
+        description: "барбершоп",
+        logo: logoLocation,
+        url: "https://location21barbershop.ru"
+    },
+
+
+
 ])
 </script>
 <template>
@@ -41,7 +61,7 @@ const projects = ref([
         <div class="title text-center ma-4">
             Сделано нами
         </div>
-        <div style="overflow: scroll;" class="d-flex align-center justify-md-center ga-10">
+        <div style="overflow: scroll;" class="d-flex  justify-center ga-10">
             <a v-for="project in projects" :href="project.url" target="_blank" style="text-decoration: none;">
                 <div class="text-center"> <img :src="project.logo" alt=""></div>
                 <div class="description"> {{ project.description }}</div>
@@ -60,7 +80,8 @@ const projects = ref([
 }
 
 img {
-    height: 40px;
+    max-height: 40px;
+    max-width: 100px;
 }
 
 .description {
@@ -68,6 +89,6 @@ img {
     color: #3E3E3E;
     text-align: center;
     line-height: clamp(0.625rem, -0.375rem + 5vw, 0.875rem);
-     
+
 }
 </style>

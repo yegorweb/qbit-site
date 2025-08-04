@@ -39,6 +39,11 @@ if (import.meta.client) {
           <img src="../assets/images/qbit-logo.svg" alt="логотип" height="48">
           <!-- <div class="text-primary font-weight-bold" style="font-size: 22px; margin-left: 13px;">Клуб Кубит</div> -->
         </div>
+        <div>
+          <div>vk</div>
+          <div>89068970429</div>
+<div>Глазов, Калинина, 2а</div>
+        </div>
       </v-container>
     </div>
 
@@ -48,10 +53,10 @@ if (import.meta.client) {
 
     <footer>
       <v-container style="display: flex;">
-        <div style="margin: -6px">
+        <!-- <div style="margin: -6px">
           <div @click="navigateTo('/agreement')" style="padding: 6px; cursor: pointer; color: #8E8E8E;">Согласие на
             обработку персональных данных</div>
-        </div>
+        </div> -->
       </v-container>
     </footer>
   </v-app>

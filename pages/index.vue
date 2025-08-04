@@ -31,8 +31,8 @@ useHead({
 </script>
 
 <template>
-  <v-container class="page-container d-flex flex-column justify-space-between align-">
-    <v-row class="flex-grow-0">
+  <v-container class="page-container d-flex flex-column justify-space-between ">
+    <v-row class="flex-grow-0 mt-8">
       <v-col cols="12" md="auto">
 
         <div class="card card-flex">
@@ -64,7 +64,7 @@ useHead({
 
 <style lang="scss" scoped>
 .page-container{
-  min-height: 85dvh;
+  min-height: 90dvh;
 } 
 .card {
   max-width: 100%;
