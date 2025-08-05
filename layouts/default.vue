@@ -17,7 +17,7 @@ if (import.meta.client) {
       <v-container class="d-flex align-center justify-space-between user-select-none pt-0 pb-0"
         style="height: 60px; position: relative;">
         <div @click="navigateTo('/')" class="d-flex flex-row align-center cursor-pointer logo">
-          <svg style="width: auto;" height="48" viewBox="0 0 225 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- <svg style="width: auto;" height="48" viewBox="0 0 225 250" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_1_80)">
           <path d="M108.582 1.20098C111.015 -0.165887 113.985 -0.165892 116.418 1.20097L220.568 59.707C223.09 61.1233 224.65 63.79 224.65 66.6819V183.318C224.65 186.21 223.09 188.877 220.568 190.293L116.418 248.799C113.985 250.166 111.015 250.166 108.582 248.799L4.43161 190.293C1.91036 188.877 0.349709 186.21 0.349709 183.318V66.6819C0.349709 63.79 1.91036 61.1233 4.43161 59.707L108.582 1.20098Z" fill="#334064"/>
           <path d="M112.5 17L209.062 71V179L112.5 233L15.9382 179V71L112.5 17Z" fill="white"/>
@@ -35,9 +35,14 @@ if (import.meta.client) {
           <rect width="225" height="250" fill="white"/>
           </clipPath>
           </defs>
-          </svg>
-
-          <div class="text-primary font-weight-bold" style="font-size: 22px; margin-left: 13px;">Клуб Кубит</div>
+          </svg> -->
+          <img src="../assets/images/qbit-logo.svg" alt="логотип" height="48">
+          <!-- <div class="text-primary font-weight-bold" style="font-size: 22px; margin-left: 13px;">Клуб Кубит</div> -->
+        </div>
+        <div>
+          <div>vk</div>
+          <div>89068970429</div>
+<div>Глазов, Калинина, 2а</div>
         </div>
       </v-container>
     </div>
@@ -48,19 +53,18 @@ if (import.meta.client) {
 
     <footer>
       <v-container style="display: flex;">
-        <div style="margin: -6px">
-          <div 
-            @click="navigateTo('/agreement')" 
-            style="padding: 6px; cursor: pointer; color: #8E8E8E;"
-          >Согласие на обработку персональных данных</div>
-        </div>
+        <!-- <div style="margin: -6px">
+          <div @click="navigateTo('/agreement')" style="padding: 6px; cursor: pointer; color: #8E8E8E;">Согласие на
+            обработку персональных данных</div>
+        </div> -->
       </v-container>
     </footer>
   </v-app>
 </template>
 
 <style lang="scss" scoped>
-.logo, .logo * {
+.logo,
+.logo * {
   user-select: none;
 }
 

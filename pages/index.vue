@@ -31,10 +31,11 @@ useHead({
 </script>
 
 <template>
-  <v-container class="page-container">
-    <v-row class="flex-md-nowrap justify-stretch">
+  <v-container class="page-container d-flex flex-column justify-space-between ">
+    <v-row class="flex-grow-0 mt-8">
       <v-col cols="12" md="auto">
-        <div class="card card-courses card-flex">
+
+        <div class="card card-flex">
           <div class="course" id="web-dev" @click="navigateTo('/sign-up/web-dev')">
             <div class="course-name">Веб-разработка</div>
             <div class="course-description">Vue, Express, HTML, CSS, JS</div>
@@ -53,25 +54,22 @@ useHead({
           </div>
         </div>
       </v-col>
-
-      <v-col cols="12" md="4">
-        <div class="card w-100">
-          <AboutUs />
-        </div>
-      </v-col>
-
-      <v-col cols="12" md="auto">
-        <img src="https://qbit-club.com/img/forParents.47ec79cb.webp" style="width: 100px;" alt="">
-      </v-col>
+      <AboutUs />
+    </v-row>
+    <v-row class="flex-grow-0">
+      <Projects />
     </v-row>
   </v-container>
 </template>
 
 <style lang="scss" scoped>
-.card-courses {
-  max-width: 365px;
+.page-container{
+  min-height: 90dvh;
+} 
+.card {
+  max-width: 100%;
 
-  @media screen and (width >= 960px) {
+  @media screen and (width >=960px) {
     & {
       min-width: 365px;
     }
@@ -110,13 +108,14 @@ useHead({
   gap: 0px;
   cursor: pointer;
 
-  &, & * {
+  &,
+  & * {
     user-select: none;
     transition: all 0.2s;
   }
 
   &-name {
-    font-size: clamp(0.875rem, -0.375rem + 6.25vw, 1.1875rem);  
+    font-size: clamp(0.875rem, -0.375rem + 6.25vw, 1.1875rem);
     font-weight: 700;
   }
 
