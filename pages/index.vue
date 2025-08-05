@@ -32,10 +32,9 @@ useHead({
 
 <template>
   <v-container class="page-container">
-    <v-row>
+    <v-row class="flex-md-nowrap justify-stretch">
       <v-col cols="12" md="auto">
-        <BlockTitle>Выбери курс</BlockTitle>
-        <div class="card card-flex">
+        <div class="card card-courses card-flex">
           <div class="course" id="web-dev" @click="navigateTo('/sign-up/web-dev')">
             <div class="course-name">Веб-разработка</div>
             <div class="course-description">Vue, Express, HTML, CSS, JS</div>
@@ -55,17 +54,21 @@ useHead({
         </div>
       </v-col>
 
-      <v-col cols="12" md="auto">
-        <BlockTitle style="margin-bottom: 10px;">О клубе</BlockTitle>
+      <v-col cols="12" md="4">
+        <div class="card w-100">
+          <AboutUs />
+        </div>
+      </v-col>
 
-        <AboutUs />
+      <v-col cols="12" md="auto">
+        <img src="https://qbit-club.com/img/forParents.47ec79cb.webp" style="width: 100px;" alt="">
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <style lang="scss" scoped>
-.card {
+.card-courses {
   max-width: 365px;
 
   @media screen and (width >= 960px) {
