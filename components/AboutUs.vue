@@ -1,5 +1,5 @@
 <script setup lang="ts">
-let content = useContent()
+
 </script>
 
 <template>
