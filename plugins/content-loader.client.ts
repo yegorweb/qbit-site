@@ -4,6 +4,6 @@ export default defineNuxtPlugin(async nuxtApp => {
     let data = await res.json() as Content
     useState('content', () => data)
   } catch {
-    showError('Ошибка загрузки')
+    createError({ message: 'Ошибка загрузки', fatal: true })
   }
 })
