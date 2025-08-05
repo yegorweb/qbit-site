@@ -20,4 +20,4 @@ declare global {
   }
 }
 
-export { Content }
+export { Content, CourseContent }
