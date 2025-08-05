@@ -1,6 +1,54 @@
 {
-  "webdevinfo": "Инфа по веб деву",
-  "drawinginfo": "Инфа по рисованию",
-  "scratchinfo": "Инфа по скратч",
-  "javainfo": "Инфа по джаве"
+  "web-dev": {
+    "name": "Web разработка",
+    "price": 600,
+    "min_age": 14,
+    "description": "информация по курсу веб разработки",
+    "teacher": {
+      "name": "Грачев Роман",
+      "avatar": "~/assets/images/roman.webp"
+    },
+    "image": "/images/about-qbit.jpg",
+    "duration": 90,
+    "frequency": 1
+  },
+  "drawing": {
+    "name": "Web разработка",
+    "price": 600,
+    "min_age": 14,
+    "description": "информация по курсу веб разработки",
+    "teacher": {
+      "name": "Грачев Роман",
+      "avatar": "~/assets/images/roman.webp"
+    },
+    "image": "~/assets/images/roman.webp",
+    "duration": 90,
+    "frequency": 1
+  },
+  "scratch": {
+    "name": "Web разработка",
+    "price": 600,
+    "min_age": 14,
+    "description": "информация по курсу веб разработки",
+    "teacher": {
+      "name": "Грачев Роман",
+      "avatar": "~/assets/images/roman.webp"
+    },
+    "image": "~/assets/images/roman.webp",
+    "duration": 90,
+    "frequency": 1
+  },
+  "java": {
+    "name": "Web разработка",
+    "price": 600,
+    "min_age": 14,
+    "description": "информация по курсу веб разработки",
+    "teacher": {
+      "name": "Грачев Роман",
+      "avatar": "~/assets/images/roman.webp"
+    },
+    "image": "~/assets/images/roman.webp",
+    "duration": 90,
+    "frequency": 1
+  }
 }
