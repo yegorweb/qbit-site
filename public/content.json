@@ -3,27 +3,27 @@
     "name": "Web разработка",
     "price": 600,
     "min_age": 14,
-    "description": "информация по курсу веб разработки",
+    "description": "Пройдем путь: базовые знания -> свой проект -> командный проект -> стартап. Что будем изучать: js, ts, css, html, node, express, mongodb, git.",
     "teacher": {
-      "name": "Грачев Роман",
-      "avatar": "~/assets/images/roman.webp"
+      "name": "Роман Грачев",
+      "avatar": "/images/roman.webp"
     },
-    "image": "/images/about-qbit.jpg",
+    "image": "/images/web-img.jpg",
     "duration": 90,
     "frequency": 1
   },
   "drawing": {
-    "name": "Web разработка",
-    "price": 600,
-    "min_age": 14,
-    "description": "информация по курсу веб разработки",
+    "name": "Цифровая живопись",
+    "price": 300,
+    "min_age": 11,
+    "description": "Рисуем в программе Krita на планшетах Wacom. Изучаем: свет, тень, композиция; пейзаж, природа, стиль; примитивный персонаж; семи-реализм персонаж; фантастический дом; концепт арт; игровой интерфейс; персонаж, маскот, локация; анимация; прект, продукт.",
     "teacher": {
-      "name": "Грачев Роман",
-      "avatar": "~/assets/images/roman.webp"
+      "name": "Юка Синицына",
+      "avatar": "/images/uca.jpg"
     },
-    "image": "~/assets/images/roman.webp",
-    "duration": 90,
-    "frequency": 1
+    "image": "/images/draw-img.jpg",
+    "duration": 60,
+    "frequency": 2
   },
   "scratch": {
     "name": "Web разработка",
@@ -32,9 +32,9 @@
     "description": "информация по курсу веб разработки",
     "teacher": {
       "name": "Грачев Роман",
-      "avatar": "~/assets/images/roman.webp"
+      "avatar": "/images/roman.webp"
     },
-    "image": "~/assets/images/roman.webp",
+    "image": "/images/web-img.jpg",
     "duration": 90,
     "frequency": 1
   },
@@ -45,9 +45,9 @@
     "description": "информация по курсу веб разработки",
     "teacher": {
       "name": "Грачев Роман",
-      "avatar": "~/assets/images/roman.webp"
+       "avatar": "/images/roman.webp"
     },
-    "image": "~/assets/images/roman.webp",
+    "image": "/images/web-img.jpg",
     "duration": 90,
     "frequency": 1
   }

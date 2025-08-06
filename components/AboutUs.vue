@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="text-end">
-          <v-avatar image="../assets/images/roman.webp" size="60" class="ma-2"></v-avatar> <b>Грачев Роман</b>
+          <v-avatar image="/images/roman.webp" size="60" class="ma-2"></v-avatar> <b>Грачев Роман</b>
         </div>
       </div>
 

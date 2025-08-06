@@ -59,7 +59,7 @@ const projects = ref([
 <template>
     <v-col cols="12">
         <div class="title text-center ma-4">
-            Сделано нами
+            Сделано в Кубит
         </div>
         <div style="overflow: scroll;" class="d-flex ga-10">
             <a v-for="project in projects" :href="project.url" target="_blank" style="text-decoration: none;">

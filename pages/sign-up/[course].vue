@@ -112,7 +112,7 @@ function reset() {
     <!-- <BlockTitle>Курс по {{ titleCourseNames.get(course as Course) }}</BlockTitle> -->
 
     <v-row>
-      <v-col cols="12" md="auto">
+      <v-col cols="12" md="4">
         <div class="card card-info" style="padding-top: 20px">
           <v-form @submit.prevent="submit" class="form">
             <v-text-field v-model="fullname.value.value"
@@ -132,7 +132,8 @@ function reset() {
               :error-messages="submited ? consent.errorMessage.value : undefined"
               :class="{ 'mt-3': submited && !!phone.errorMessage.value }" color="primary" density="comfortable">
               <template v-slot:label>
-                <div>Даю <a href="/agreement" style="text-decoration: none;" target="_blank" @click.stop>согласие на
+                <div>Даю <a href="https://storage.yandexcloud.net/politica/Politica%20confidetcionalnosty.pdf"
+                    style="text-decoration: none;" target="_blank" @click.stop>согласие на
                     обработку персональных данных</a></div>
               </template>
             </v-checkbox>
@@ -142,12 +143,44 @@ function reset() {
           </v-form>
         </div>
       </v-col>
+      <v-col cols="12" md="4">
 
-      <v-col cols="12" md="auto">
-        <ClientOnly>
-          <img :src="curentCourse?.image" alt="">
-          {{ curentCourse }}
-        </ClientOnly>
+        <div class="card ">
+          <div class="course">
+            <div>
+              Стоимость занятия: {{ curentCourse?.price }} рублей
+            </div>
+            <div>
+              Продолжительность: {{ curentCourse?.duration }} минут
+            </div>
+            <div>
+              В неделю: {{ curentCourse?.frequency }} {{ curentCourse?.frequency == 1 ? "занятие" : "занятия" }}
+            </div>
+            <div>
+              Минимальный возраст: {{ curentCourse?.min_age }} лет
+            </div>
+
+
+            {{ curentCourse?.description }}
+
+            <h3>надо еще расписание занятий добавить и какой-то message для информированя об отменах</h3>
+            <div class="text-end">
+              <v-avatar :image="curentCourse?.teacher.avatar" size="60" class="ma-2"></v-avatar> <b>{{
+                curentCourse?.teacher.name }}</b>
+            </div>
+          </div>
+        </div>
+      </v-col>
+      <v-col cols="12" md="4">
+
+
+
+        <div class="card ">
+          <div class="image" :style="{ backgroundImage: `url(${curentCourse?.image})` }">
+
+          </div>
+
+        </div>
       </v-col>
 
     </v-row>
@@ -195,13 +228,34 @@ function reset() {
 
 <style lang="scss" scoped>
 .card {
-  max-width: 365px;
+  max-width: 100%;
+  height: 100%;
 
   @media screen and (width >=960px) {
     & {
       min-width: 365px;
     }
   }
+}
+
+.course {
+  background-color: #EFEFEF;
+
+  border-radius: 8.59px;
+  width: 100%;
+  padding: 12px 18px;
+  height: 100%;
+}
+
+.image {
+  min-height: 300px;
+  border-radius: 8.59px;
+  width: 100%;
+  padding: 12px 18px;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .status-card {
