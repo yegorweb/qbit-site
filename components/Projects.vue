@@ -60,10 +60,11 @@ const duplicatedProjects = computed(() => [...projects.value, ...projects.value]
             Сделано нами
         </div>
         <div class="slider"
-
-        :style="`--width: 200px;
-                --height: 100px;
-                --quantity: ${projects.length};`"
+        :style="`
+        --width: 200px;
+        --height: 100px;
+        --quantity: ${projects.length};
+        `"
         >
             <div class="slider-content">
                 <a v-for="(project,index) in projects" :href="project.url" target="_blank" :style="`text-decoration: none; --position: ${index}`" class="slider-item">
