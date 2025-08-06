@@ -51,25 +51,28 @@ const projects = ref([
         logo: logoLocation,
         url: "https://location21barbershop.ru"
     },
-
-
-
 ])
+const duplicatedProjects = computed(() => [...projects.value, ...projects.value]);
 </script>
 <template>
     <v-col cols="12">
         <div class="title text-center ma-4">
             Сделано в Кубит
         </div>
-        <div style="overflow: scroll;" class="d-flex ga-10">
-            <a v-for="project in projects" :href="project.url" target="_blank" style="text-decoration: none;">
-                <div class="text-center"> <img :src="project.logo" alt=""></div>
-                <div class="description"> {{ project.description }}</div>
-            </a>
+        <div class="slider"
+        :style="`
+        --width: 200px;
+        --height: 100px;
+        --quantity: ${projects.length};
+        `"
+        >
+            <div class="slider-content">
+                <a v-for="(project,index) in projects" :href="project.url" target="_blank" :style="`text-decoration: none; --position: ${index}`" class="slider-item">
+                    <div class="text-center"> <img :src="project.logo" alt=""></div>
+                    <div class="description"> {{ project.description }}</div>
+                </a>
+            </div>
         </div>
-
-
-
     </v-col>
 
 </template>
@@ -89,6 +92,42 @@ img {
     color: #3E3E3E;
     text-align: center;
     line-height: clamp(0.625rem, -0.375rem + 5vw, 0.875rem);
+}
 
+.slider{
+    width: 100%;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
+}
+.slider .slider-content{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+}
+@keyframes autoRun{
+    from {
+        left: 100%;
+    }
+    to {
+        left: calc(var(--width) * -1);
+    }
+}
+.slider .slider-content .slider-item{
+    width: var(--width);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    transition: filter 0.5s;
+    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
+}
+.slider:hover .slider-item{
+    animation-play-state: paused!important;
 }
 </style>

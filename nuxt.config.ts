@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     'vuetify-nuxt-module',
     '@nuxtjs/google-fonts',
     '@nuxtjs/sitemap',
-    '@nuxtjs/robots'
+    '@nuxtjs/robots',
   ],
   css: ['~/assets/styles/main.scss'],
 
