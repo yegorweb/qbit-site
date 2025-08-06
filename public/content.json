@@ -3,7 +3,7 @@
     "name": "Web разработка",
     "price": 600,
     "min_age": 14,
-    "description": "Пройдем путь: базовые знания -> свой проект -> командный проект -> стартап. Что будем изучать: js, ts, css, html, node, express, mongodb, git.",
+    "description": "Пройдем путь: базовые знания -> свой проект -> командный проект -> стартап. Что будем изучать: js, ts, css, html, vue, node, express, mongodb, git.",
     "teacher": {
       "name": "Роман Грачев",
       "avatar": "/images/roman.webp"
@@ -26,26 +26,26 @@
     "frequency": 2
   },
   "scratch": {
-    "name": "Web разработка",
-    "price": 600,
-    "min_age": 14,
-    "description": "информация по курсу веб разработки",
+    "name": "Scratch",
+    "price": 300,
+    "min_age": 9,
+    "description": "Скретч  — визуальная событийно-ориентированная среда программирования для обучения школьников младших и средних классов. С помощью Скретч вы можете программировать собственные интерактивные истории, игры и анимацию. Новый проект на каждом занятии",
     "teacher": {
-      "name": "Грачев Роман",
+      "name": "Роман Грачев",
       "avatar": "/images/roman.webp"
     },
-    "image": "/images/web-img.jpg",
-    "duration": 90,
+    "image": "/images/scratch-img.webp",
+    "duration": 45,
     "frequency": 1
   },
   "java": {
-    "name": "Web разработка",
+    "name": "Java",
     "price": 600,
-    "min_age": 14,
-    "description": "информация по курсу веб разработки",
+    "min_age": 12,
+    "description": "Познакомитесь со средой разработки Eclipse и основными элементами разработки программы,с правилами создания программы на языке Java и ее структурой, с синтаксисом языка программирования Java,особенностями написания инструкций.",
     "teacher": {
-      "name": "Грачев Роман",
-       "avatar": "/images/roman.webp"
+      "name": "Сергей Копысов",
+      "avatar": "/images/sergey.webp"
     },
     "image": "/images/web-img.jpg",
     "duration": 90,
