@@ -15,16 +15,12 @@ if (import.meta.client) {
   <v-app style="min-height: 100vh;">
     <div class="header">
       <v-container class="d-flex align-center justify-space-between user-select-none pt-0 pb-0"
-        style="height: 60px; position: relative;">
-        <div @click="navigateTo('/')" class=" d-flex flex-row align-center cursor-pointer logo">
+        style="position: relative;">
+        <div @click="navigateTo('/')" class=" d-flex flex-row align-center cursor-pointer logo mr-4">
       
-          <img src="../assets/images/qbit-logo.svg" alt="логотип" height="56">
+          <img src="../assets/images/qbit-logo.svg" alt="логотип" height="56" class="mt-4">
         </div>
-        <div>
-          <div>vk</div>
-          <div>89068970429</div>
-<div>Глазов, Калинина, 2а</div>
-        </div>
+        <Contacts></Contacts>
       </v-container>
     </div>
 
@@ -55,7 +51,6 @@ if (import.meta.client) {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
   z-index: 999;
   transition: all .15s;
 }
