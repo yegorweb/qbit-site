@@ -146,16 +146,13 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
         <div class="card ">
           <div class="course">
             <div>
-              Стоимость занятия: {{ curentCourse?.price }} рублей
+              {{ curentCourse?.frequency }} {{ curentCourse?.frequency == 1 ? "занятие" : "занятия" }} в неделю
+              по {{ curentCourse?.duration }} минут, стоимость занятия {{ curentCourse?.price }} рублей. 
+              Минимальный возраст {{ curentCourse?.min_age }} лет.
             </div>
-            <div>
-              Продолжительность: {{ curentCourse?.duration }} минут
-            </div>
-            <div>
-              В неделю: {{ curentCourse?.frequency }} {{ curentCourse?.frequency == 1 ? "занятие" : "занятия" }}
-            </div>
-            <div>
-              Минимальный возраст: {{ curentCourse?.min_age }} лет
+            <v-divider class="ma-4"></v-divider>
+            <div v-html="curentCourse?.schedule">
+
             </div>
             <div class="text-end">
               <v-avatar :image="curentCourse?.teacher.avatar" size="60" class="ma-2"></v-avatar> <b>{{
@@ -175,34 +172,22 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
 
         </div>
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col cols="12" md="8">
 
         <div class="card ">
-      
+
           <div class="course">
-              <BlockTitle>Описание</BlockTitle>
+            <BlockTitle>Описание</BlockTitle>
             <div>
-              {{ curentCourse?.description }} 
-            </div>
-       
-  
-          </div>
-        </div>
-      </v-col>
-
-      <v-col cols="12" md="4">
-
-        <div class="card ">
-          <div class="course">
-            <BlockTitle>Расписание</BlockTitle>
-          <div v-html="curentCourse?.schedule">
-         
+              {{ curentCourse?.description }}
             </div>
 
 
           </div>
         </div>
       </v-col>
+
+
 
       <v-col cols="12" md="4">
 
@@ -210,9 +195,9 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
           <div class="course">
             <BlockTitle>Объявления</BlockTitle>
             <div v-html="curentCourse?.message">
-         
+
             </div>
-        
+
 
           </div>
         </div>
@@ -268,11 +253,11 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
   max-width: 100%;
   height: 100%;
 
-  @media screen and (width >=960px) {
-    & {
-      min-width: 365px;
-    }
-  }
+  // @media screen and (width >=960px) {
+  //   & {
+  //     min-width: 365px;
+  //   }
+  // }
 }
 
 .course {

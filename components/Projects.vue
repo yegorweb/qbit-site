@@ -37,7 +37,7 @@ const projects = ref([
         url: "https://up-vk.ru"
     },
     {
-        description: "автоматизация торговли",
+        description: "торговое оборудование",
         logo: logoTorgOb,
         url: "https://qbit-torgob.ru"
     },
