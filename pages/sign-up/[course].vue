@@ -178,7 +178,9 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
       <v-col cols="12" md="4">
 
         <div class="card ">
+      
           <div class="course">
+              <BlockTitle>Описание</BlockTitle>
             <div>
               {{ curentCourse?.description }} 
             </div>
@@ -192,17 +194,9 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
 
         <div class="card ">
           <div class="course">
-            <div>
-              Стоимость занятия: {{ curentCourse?.price }} рублей
-            </div>
-            <div>
-              Продолжительность: {{ curentCourse?.duration }} минут
-            </div>
-            <div>
-              В неделю: {{ curentCourse?.frequency }} {{ curentCourse?.frequency == 1 ? "занятие" : "занятия" }}
-            </div>
-            <div>
-              Минимальный возраст: {{ curentCourse?.min_age }} лет
+            <BlockTitle>Расписание</BlockTitle>
+          <div v-html="curentCourse?.schedule">
+         
             </div>
 
 
@@ -214,7 +208,8 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
 
         <div class="card ">
           <div class="course">
-            <div v-html="curentCourse?.shedule">
+            <BlockTitle>Объявления</BlockTitle>
+            <div v-html="curentCourse?.message">
          
             </div>
         

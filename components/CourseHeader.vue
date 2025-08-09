@@ -77,7 +77,7 @@ useHead({
 }
 
 .course {
-  background-color: #EFEFEF;
+ 
   background-position: 100% 50%;
   background-size: contain;
   border-radius: 8.59px;
