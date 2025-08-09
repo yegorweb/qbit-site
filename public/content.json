@@ -10,7 +10,9 @@
     },
     "image": "/images/web-img.jpg",
     "duration": 90,
-    "frequency": 1
+    "frequency": 1,
+    "message": "привет",
+    "schedule": "<ul> <li>Понедельник 18:00 - 19:30</li> <li>Среда 18:00 - 19:30</li>  </ul>"
   },
   "drawing": {
     "name": "Цифровая живопись",
@@ -23,7 +25,9 @@
     },
     "image": "/images/draw-img.jpg",
     "duration": 60,
-    "frequency": 2
+    "frequency": 2,
+    "message": "привет",
+    "schedule": "<ul> <li>Понедельник 18:00 - 19:30</li> <li>Среда 18:00 - 19:30</li>  </ul>"
   },
   "scratch": {
     "name": "Scratch",
@@ -36,7 +40,9 @@
     },
     "image": "/images/scratch-img.webp",
     "duration": 45,
-    "frequency": 1
+    "frequency": 1,
+    "message": "привет",
+    "schedule": "<ul> <li>Понедельник 18:00 - 19:30</li> <li>Среда 18:00 - 19:30</li>  </ul>"
   },
   "java": {
     "name": "Java",
@@ -49,6 +55,8 @@
     },
     "image": "/images/web-img.jpg",
     "duration": 90,
-    "frequency": 1
+    "frequency": 1,
+    "message": "привет",
+    "schedule": "<ul> <li>Понедельник 18:00 - 19:30</li> <li>Среда 18:00 - 19:30</li>  </ul>"
   }
 }
