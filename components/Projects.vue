@@ -135,9 +135,9 @@ img {
     flex-direction: column;
     align-items: center;
     left: 100%;
-    animation: autoRun 10s linear infinite;
+    animation: autoRun 20s linear infinite;
     transition: filter 0.5s;
-    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
+    animation-delay: calc( (20s / var(--quantity)) * (var(--position) - 1) - 20s)!important;
 }
 .slider:hover .slider-item{
     animation-play-state: paused!important;

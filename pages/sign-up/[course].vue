@@ -50,8 +50,6 @@ let age = useField<number>('age')
 let phone = useField<string>('phone')
 let consent = useField<boolean>('consent')
 
-onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: string) => phone.value.value = value))
-
 let submited = ref(false)
 let loading = ref(false)
 let showSuccessPopup = ref(false)
@@ -102,6 +100,8 @@ function reset() {
   submited.value = false
   handleReset()
 }
+
+onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: string) => phone.value.value = value))
 </script>
 
 <template>
