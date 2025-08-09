@@ -32,7 +32,7 @@ useHead({
 
 <template>
   <v-container class="page-container d-flex flex-column justify-space-between ">
-    <v-row class="flex-grow-0 mt-8">
+    <v-row class="flex-grow-0 mt-6">
       <v-col cols="12" md="4">
 
         <div class="card card-flex">

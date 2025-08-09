@@ -108,12 +108,10 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
   <v-container class="page-container">
     <BackButton />
 
-
-    <!-- <BlockTitle>Курс по {{ titleCourseNames.get(course as Course) }}</BlockTitle> -->
-
     <v-row>
       <v-col cols="12" md="4">
-        <div class="card card-info" style="padding-top: 20px">
+        <div class="card card-info">
+          <CourseHeader :course='course' />
           <v-form @submit.prevent="submit" class="form">
             <v-text-field v-model="fullname.value.value"
               :error-messages="submited ? fullname.errorMessage.value : undefined" label="Имя Фамилия"
@@ -132,9 +130,9 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
               :error-messages="submited ? consent.errorMessage.value : undefined"
               :class="{ 'mt-3': submited && !!phone.errorMessage.value }" color="primary" density="comfortable">
               <template v-slot:label>
-                <div>Даю <a href="https://storage.yandexcloud.net/politica/Politica%20confidetcionalnosty.pdf"
-                    style="text-decoration: none;" target="_blank" @click.stop>согласие на
-                    обработку персональных данных</a></div>
+                <div>Даю <b><a  href="https://storage.yandexcloud.net/politica/Politica%20confidetcionalnosty.pdf"
+                      style="text-decoration: none; color: black;" target="_blank" @click.stop>согласие на
+                      обработку персональных данных</a></b></div>
               </template>
             </v-checkbox>
 
@@ -275,9 +273,7 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
   gap: 10px;
 }
 
-.card-info {
-  padding: 18px;
-}
+
 
 .window-item {
   padding: 27px;
