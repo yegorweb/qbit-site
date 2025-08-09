@@ -130,7 +130,7 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
               :error-messages="submited ? consent.errorMessage.value : undefined"
               :class="{ 'mt-3': submited && !!phone.errorMessage.value }" color="primary" density="comfortable">
               <template v-slot:label>
-                <div>Даю <b><a  href="https://storage.yandexcloud.net/politica/Politica%20confidetcionalnosty.pdf"
+                <div>Даю <b><a href="https://storage.yandexcloud.net/politica/Politica%20confidetcionalnosty.pdf"
                       style="text-decoration: none; color: black;" target="_blank" @click.stop>согласие на
                       обработку персональных данных</a></b></div>
               </template>
@@ -157,11 +157,6 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
             <div>
               Минимальный возраст: {{ curentCourse?.min_age }} лет
             </div>
-
-
-            {{ curentCourse?.description }}
-
-            <h3>надо еще расписание занятий добавить и какой-то message для информированя об отменах</h3>
             <div class="text-end">
               <v-avatar :image="curentCourse?.teacher.avatar" size="60" class="ma-2"></v-avatar> <b>{{
                 curentCourse?.teacher.name }}</b>
@@ -180,6 +175,55 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
 
         </div>
       </v-col>
+      <v-col cols="12" md="4">
+
+        <div class="card ">
+          <div class="course">
+            <div>
+              {{ curentCourse?.description }} 
+            </div>
+       
+  
+          </div>
+        </div>
+      </v-col>
+
+      <v-col cols="12" md="4">
+
+        <div class="card ">
+          <div class="course">
+            <div>
+              Стоимость занятия: {{ curentCourse?.price }} рублей
+            </div>
+            <div>
+              Продолжительность: {{ curentCourse?.duration }} минут
+            </div>
+            <div>
+              В неделю: {{ curentCourse?.frequency }} {{ curentCourse?.frequency == 1 ? "занятие" : "занятия" }}
+            </div>
+            <div>
+              Минимальный возраст: {{ curentCourse?.min_age }} лет
+            </div>
+
+
+          </div>
+        </div>
+      </v-col>
+
+      <v-col cols="12" md="4">
+
+        <div class="card ">
+          <div class="course">
+            <div v-html="curentCourse?.shedule">
+         
+            </div>
+        
+
+          </div>
+        </div>
+      </v-col>
+
+
 
     </v-row>
   </v-container>
