@@ -69,11 +69,6 @@ useHead({
 .card {
   max-width: 100%;
 
-  // @media screen and (width >=960px) {
-  //   & {
-  //     min-width: 365px;
-  //   }
-  // }
 }
 
 .card-flex {
