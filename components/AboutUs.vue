@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <v-col cols="12" md="4">
+  <v-col cols="12" md="6" lg="4">
 
     <div class="card">
       <div class="course">
@@ -26,7 +26,7 @@
 
     </div>
   </v-col>
-  <v-col cols="12" md="4">
+  <v-col cols="12"  md="6" lg="4">
 
     <div class="card ">
       <div class=" image">
@@ -42,11 +42,11 @@
   max-width: 100%;
   height: 100%;
 
-  @media screen and (width >=960px) {
-    & {
-      min-width: 365px;
-    }
-  }
+  // @media screen and (width >=960px) {
+  //   & {
+  //     min-width: 365px;
+  //   }
+  // }
 }
 
 .image {

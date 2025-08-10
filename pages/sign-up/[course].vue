@@ -109,7 +109,7 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
     <BackButton />
 
     <v-row>
-      <v-col cols="12" md="4">
+      <v-col cols="12"  md="6" lg="4">
         <div class="card card-info">
           <CourseHeader :course='course' />
           <v-form @submit.prevent="submit" class="form">
@@ -141,7 +141,7 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
           </v-form>
         </div>
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col cols="12"  md="6" lg="4">
 
         <div class="card ">
           <div class="course">
@@ -161,7 +161,7 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
           </div>
         </div>
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col  cols="12" order-md="2" order-lg="1"  md="6" lg="4">
 
 
 
@@ -172,7 +172,7 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
 
         </div>
       </v-col>
-      <v-col cols="12" md="8">
+      <v-col cols="12" order-md="1" order-lg="2" md="12" lg="8">
 
         <div class="card ">
 
@@ -186,10 +186,7 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
           </div>
         </div>
       </v-col>
-
-
-
-      <v-col cols="12" md="4">
+      <v-col cols="12" order-md="3" order-lg="3" md="6" lg="4">
 
         <div class="card ">
           <div class="course">
@@ -202,9 +199,6 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
           </div>
         </div>
       </v-col>
-
-
-
     </v-row>
   </v-container>
 
