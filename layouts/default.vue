@@ -19,7 +19,7 @@ onMounted(() => {
     <div class="header" :style="{ background: backgroundColor }">
       <v-container class="d-flex align-center justify-space-between user-select-none pt-2 pb-2"
         style="position: relative;">
-        <QbitLogo @click="navigateTo('/')" style="height: 56px;" class="cursor-pointer mr-4" />
+        <QbitLogo @click="navigateTo('/')" style="height: 100%; max-height: 56px; max-width: 40%;" class="cursor-pointer mr-4" />
 
         <Contacts></Contacts>
       </v-container>
