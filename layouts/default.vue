@@ -16,9 +16,9 @@ if (import.meta.client) {
     <div class="header">
       <v-container class="d-flex align-center justify-space-between user-select-none pt-0 pb-0"
         style="position: relative;">
-        <div @click="navigateTo('/')" class=" d-flex flex-row align-center cursor-pointer logo mr-4">
+        <div @click="navigateTo('/')" class=" d-flex flex-row align-center cursor-pointer logo mr-4" style=" max-width: 40%;">
       
-          <img src="../assets/images/qbit-logo.svg" alt="логотип" height="56" class="mt-4">
+          <img src="../assets/images/qbit-logo.svg" alt="логотип" style="max-height: 56px; max-width: 100%;" class="mt-4" >
         </div>
         <Contacts></Contacts>
       </v-container>
@@ -43,6 +43,7 @@ if (import.meta.client) {
 .logo,
 .logo * {
   user-select: none;
+ 
 }
 
 .header {

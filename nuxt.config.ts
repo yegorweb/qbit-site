@@ -43,8 +43,6 @@ export default defineNuxtConfig({
   generate: {
     routes: [
       '/',
-      '/about-us',
-      '/agreement',
       ...courses.map(course => `/sign-up/${course}`),
     ]
   },
