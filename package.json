@@ -21,6 +21,7 @@
     "@nuxtjs/robots": "^5.2.11",
     "@nuxtjs/sitemap": "^7.4.1",
     "@vite-pwa/nuxt": "^1.0.4",
+    "nuxt-svgo": "^4.2.6",
     "sass-embedded": "^1.89.2",
     "vuetify-nuxt-module": "^0.18.7"
   }

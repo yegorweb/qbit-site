@@ -8,7 +8,7 @@ const courses = ['web-dev', 'scratch', 'java', 'drawing']
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  modules: ['vuetify-nuxt-module', '@nuxtjs/google-fonts', '@nuxtjs/sitemap', '@nuxtjs/robots', '@vite-pwa/nuxt'],
+  modules: ['vuetify-nuxt-module', '@nuxtjs/google-fonts', '@nuxtjs/sitemap', '@nuxtjs/robots', '@vite-pwa/nuxt', 'nuxt-svgo'],
   css: ['~/assets/styles/main.scss'],
 
   features: {
