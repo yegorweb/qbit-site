@@ -1,5 +1,6 @@
 <script setup lang="ts">
 useSeoMeta({
+  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0',
   ogTitle: 'Клуб Кубит',
   ogDescription: 'Клуб программирования и дизайна Кубит. Находится в городе Глазов',
   ogImage: 'https://qbit-club.com/og-image.jpg',
@@ -14,6 +15,10 @@ useSeoMeta({
 
 useHead({
   link: [
+    {
+      rel: 'canonical',
+      href: 'https://qbit-club.com'
+    },
     {
       rel: 'preload',
       href: '/content.json',
