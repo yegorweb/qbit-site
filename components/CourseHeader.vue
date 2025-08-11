@@ -6,7 +6,6 @@ import scratchImgUrl from '@/assets/images/scratch.png'
 import javaImgUrl from '@/assets/images/java.png'
 
 defineProps(['course'])
-const router = useRouter()
 
 useHead({
   link: [
@@ -36,7 +35,7 @@ useHead({
 
 <template>
 
-  <div class="card-flex pb-4"  @click="router.back()">
+  <div class="card-flex pb-4">
     <div v-if="course == 'web-dev'" class="course" id="web-dev"  >
       <div class="course-name">Веб-разработка</div>
       <div class="course-description">Vue, Express, HTML, CSS, JS</div>
