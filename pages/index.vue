@@ -90,10 +90,6 @@ useHead({
   padding: 27px;
 }
 
-.v-selection-control {
-  align-items: flex-start !important;
-}
-
 .course {
   background-color: #EFEFEF;
   background-position: 100% 50%;
@@ -124,13 +120,15 @@ useHead({
     color: #3E3E3E;
   }
 
-  &:hover {
-    .course-name {
-      color: #ffffff;
-    }
+  @media (hover: hover) {
+    &:hover {
+      .course-name {
+        color: #ffffff;
+      }
 
-    .course-description {
-      color: #dfdfdf;
+      .course-description {
+        color: #dfdfdf;
+      }
     }
   }
 }
@@ -138,32 +136,40 @@ useHead({
 #web-dev {
   background-image: url(@/assets/images/web-dev.png);
 
-  &:hover {
-    background-color: #3a5eb2;
+  @media (hover: hover) {
+    &:hover {
+      background-color: #3a5eb2;
+    }
   }
 }
 
 #drawing {
   background-image: url(@/assets/images/drawing.png);
 
-  &:hover {
-    background-color: #265787;
+  @media (hover: hover) {
+    &:hover {
+      background-color: #265787;
+    }
   }
 }
 
 #scratch {
   background-image: url(@/assets/images/scratch.png);
 
-  &:hover {
-    background-color: #f8a21f;
+  @media (hover: hover) {
+    &:hover {
+      background-color: #f8a21f;
+    }
   }
 }
 
 #java {
   background-image: url(@/assets/images/java.png);
 
-  &:hover {
-    background-color: #5283a2;
+  @media (hover: hover) {
+    &:hover {
+      background-color: #5283a2;
+    }
   }
 }
 </style>
