@@ -8,6 +8,7 @@ import logoTorgOb from '~/assets/images/pos-qbit.png'
 import logoFormtomail from '~/assets/images/stamp.svg'
 import logoGlazovest from '~/assets/images/glazov-est.png'
 import logoUpVk from '~/assets/images/up-vk.png'
+import logoUk from '~/assets/images/dom.png'
 
 const projects = ref([
     {
@@ -50,6 +51,11 @@ const projects = ref([
         description: "барбершоп",
         logo: logoLocation,
         url: "https://location21barbershop.ru"
+    },
+      {
+        description: "управляющая компания",
+        logo: logoUk,
+        url: "https://upk-dom.ru"
     },
 ])
 </script>

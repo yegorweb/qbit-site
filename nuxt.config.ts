@@ -82,7 +82,8 @@ export default defineNuxtConfig({
         themes: {
           light: {
             colors: {
-              primary: '#334064'
+              primary: '#27384b',
+              accent: '#e76f51'
             },
           }
         }

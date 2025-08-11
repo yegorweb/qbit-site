@@ -137,64 +137,72 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
             </v-checkbox>
 
             <v-btn type="submit" :loading="loading"
-              :class="{ 'w-100': true, 'mt-3': submited && !!consent.errorMessage.value, 'bg-primary': true }">Записаться</v-btn>
+              :class="{ 'w-100': true, 'mt-3': submited && !!consent.errorMessage.value, 'bg-accent': true }">Записаться</v-btn>
           </v-form>
         </div>
       </v-col>
       <v-col cols="12" md="6" lg="4">
+        <ClientOnly>
+          <div class="card ">
+            <div class="course d-flex flex-column justify-space-between">
+              <div>
+                <b> {{ curentCourse?.frequency }} {{ curentCourse?.frequency == 1 ? "занятие" : "занятия" }} в неделю
+                </b>
+                по <b>{{ curentCourse?.duration }} минут</b>, стоимость занятия <b>{{ curentCourse?.price }} рублей</b>.
+                Минимальный возраст <b>{{ curentCourse?.min_age }} лет</b>.
+              </div>
 
-        <div class="card ">
-          <div class="course d-flex flex-column justify-space-between">
-            <div>
-              <b> {{ curentCourse?.frequency }} {{ curentCourse?.frequency == 1 ? "занятие" : "занятия" }} в неделю </b>
-              по <b>{{ curentCourse?.duration }} минут</b>, стоимость занятия <b>{{ curentCourse?.price }} рублей</b>.
-              Минимальный возраст <b>{{ curentCourse?.min_age }} лет</b>.
-            </div>
 
+              <div v-html="curentCourse?.schedule">
 
-            <div v-html="curentCourse?.schedule">
-
-            </div>
-            <div>
-              <v-avatar :image="curentCourse?.teacher.avatar" size="60" class="ma-2"></v-avatar> <b>{{
-                curentCourse?.teacher.name }}</b>
+              </div>
+              <div>
+                <v-avatar :image="curentCourse?.teacher.avatar" size="60" class="ma-2"></v-avatar> <b>{{
+                  curentCourse?.teacher.name }}</b>
+              </div>
             </div>
           </div>
-        </div>
+        </ClientOnly>
       </v-col>
       <v-col cols="12" order-md="2" order-lg="1" md="6" lg="4">
-        <div class="card ">
-          <div class="image" :style="{ backgroundImage: `url(${curentCourse?.image})` }">
+        <ClientOnly>
+          <div class="card ">
+            <div class="image" :style="{ backgroundImage: `url(${curentCourse?.image})` }">
+
+            </div>
 
           </div>
-
-        </div>
+        </ClientOnly>
       </v-col>
       <v-col cols="12" order-md="1" order-lg="2" md="12" lg="8">
+        <ClientOnly>
+          <div class="card ">
 
-        <div class="card ">
+            <div class="course">
+              <BlockTitle>Описание</BlockTitle>
+              <div v-html="curentCourse?.description">
 
-          <div class="course">
-            <BlockTitle>Описание</BlockTitle>
-            <div v-html="curentCourse?.description">
+              </div>
+
 
             </div>
-
-
           </div>
-        </div>
+        </ClientOnly>
       </v-col>
       <v-col cols="12" order-md="3" order-lg="3" md="6" lg="4">
+        <ClientOnly>
+          <div class="card ">
+            <div class="course">
+              <BlockTitle>Объявление</BlockTitle>
+              <div class="d-flex">
+                <v-divider class="border-opacity-100" color="accent" thickness="5" vertical></v-divider>
+                <div v-html="curentCourse?.message" style="font-weight: 500; padding: 10px;">
+                </div>
+              </div>
 
-        <div class="card ">
-          <div class="course">
-            <BlockTitle>Объявление</BlockTitle>
-            <div v-html="curentCourse?.message" style="font-weight: 500; padding: 10px;">
             </div>
-
-
           </div>
-        </div>
+        </ClientOnly>
       </v-col>
     </v-row>
   </v-container>
