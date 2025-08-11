@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// @ts-ignore
 import VK from '../assets/images/vk.svg?component'
 </script>
 <template>
