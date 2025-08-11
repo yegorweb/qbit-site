@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import QbitLogo from '../assets/images/qbit-logo.svg?component'
 let backgroundColor = ref('none')
 onMounted(() => {
   const tick = () => {
@@ -16,12 +17,10 @@ onMounted(() => {
 <template>
   <v-app style="min-height: 100vh;">
     <div class="header" :style="{ background: backgroundColor }">
-      <v-container class="d-flex align-center justify-space-between user-select-none pt-0 pb-0"
+      <v-container class="d-flex align-center justify-space-between user-select-none pt-2 pb-2"
         style="position: relative;">
-        <div @click="navigateTo('/')" class=" d-flex flex-row align-center cursor-pointer logo mr-4" style=" max-width: 40%;">
-      
-          <img src="../assets/images/qbit-logo.svg" alt="логотип" style="max-height: 56px; max-width: 100%;" class="mt-4" >
-        </div>
+        <QbitLogo @click="navigateTo('/')" style="height: 56px;" class="cursor-pointer mr-4" />
+
         <Contacts></Contacts>
       </v-container>
     </div>

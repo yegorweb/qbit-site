@@ -31,7 +31,7 @@ useHead({
 </script>
 
 <template>
-  <v-container class="page-container d-flex flex-column justify-space-between ">
+  <v-container class="page-container d-flex flex-column justify-space-between " style="padding-top: 12px !important;">
     <v-row class="flex-grow-0 mt-6">
       <v-col cols="12"  md="6" lg="4">
 

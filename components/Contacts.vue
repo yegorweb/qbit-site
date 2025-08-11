@@ -1,5 +1,5 @@
-<script setup>
-
+<script setup lang="ts">
+import VK from '../assets/images/vk.svg?component'
 </script>
 <template>
 
@@ -22,7 +22,7 @@
         </div>
         <div class="ml-2">
             <a href="https://vk.com/qbitclub">
-                <img src="../assets/images/vk.svg" alt="vk">
+                <VK width="24" height="24" />
             </a>
         </div>
 
@@ -34,6 +34,8 @@
 .contacts {
     display: flex;
     flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
     font-size: clamp(0.625rem, -0.375rem + 5vw, 0.875rem);
     line-height: 20px;
     font-weight: 600;
@@ -44,11 +46,7 @@
 }
 
 a {
-
     color: #3E3E3E;
     text-decoration: none;
-
-
-    ;
 }
 </style>
