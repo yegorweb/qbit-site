@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+// @ts-ignore
 import QbitLogo from '../assets/images/qbit-logo.svg?component'
 let backgroundColor = ref('none')
 onMounted(() => {
