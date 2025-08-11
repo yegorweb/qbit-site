@@ -36,5 +36,6 @@ useHead({
 </script>
 
 <template>
+  <NuxtPwaManifest />
   <NuxtLayout />
 </template>
