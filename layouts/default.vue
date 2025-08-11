@@ -1,19 +1,21 @@
 <script lang="ts" setup>
 let backgroundColor = ref('none')
-if (import.meta.client) {
-  window.addEventListener('scroll', (e) => {
+onMounted(() => {
+  const tick = () => {
     if (window.scrollY > 0) {
       backgroundColor.value = '#FFFFFF'
     } else {
       backgroundColor.value = 'none'
     }
-  })
-}
+  }
+  tick()
+  window.addEventListener('scroll', tick)
+})
 </script>
 
 <template>
   <v-app style="min-height: 100vh;">
-    <div class="header">
+    <div class="header" :style="{ background: backgroundColor }">
       <v-container class="d-flex align-center justify-space-between user-select-none pt-0 pb-0"
         style="height: 60px; position: relative;">
         <div @click="navigateTo('/')" class=" d-flex flex-row align-center cursor-pointer logo">
@@ -50,7 +52,6 @@ if (import.meta.client) {
 }
 
 .header {
-  background: v-bind(backgroundColor);
   position: sticky;
   top: 0;
   left: 0;
