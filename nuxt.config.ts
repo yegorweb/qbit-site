@@ -14,7 +14,6 @@ export default defineNuxtConfig({
   features: {
     inlineStyles: false
   },
-  
   app: {
     head: {
       htmlAttrs: {

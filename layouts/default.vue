@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import QbitLogo from '../assets/images/qbit-logo.svg?component'
+import QbitLogo  from '../assets/images/qbit-logo.svg?component'
 let backgroundColor = ref('none')
 onMounted(() => {
   const tick = () => {
