@@ -74,9 +74,9 @@ let submitForm = handleSubmit(async values => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        title: 'Новый ученик',
+        title: 'Запись Кубит',
         body,
-        apiKey: 'QOFyBYCZchPEfaD3'
+        apiKey: 'WDazkKmM4VthbyrS'
       })
     })
     if (response.status === 200) {
