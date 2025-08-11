@@ -111,7 +111,7 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
     <v-row>
       <v-col cols="12" md="6" lg="4">
         <div class="card card-info">
-          <CourseHeader :course='course' />
+          <CourseHeader :course='course' class="course-header" />
           <v-form @submit.prevent="submit" class="form">
             <v-text-field v-model="fullname.value.value"
               :error-messages="submited ? fullname.errorMessage.value : undefined" label="Имя Фамилия"
@@ -205,46 +205,46 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
         </ClientOnly>
       </v-col>
     </v-row>
+
+    <v-dialog v-model="showSuccessPopup" max-width="450">
+      <template v-slot:default="{ isActive }">
+        <div class="d-flex flex-column justify-center align-center" style="margin-top: -30px;">
+          <v-icon size="70" color="white" class="bg-green" :icon="mdiCheck"
+            style="margin-bottom: -30px; z-index: 999; padding: 10px; border-radius: 999px;"></v-icon>
+
+          <v-card class="status-card rounded-lg" style="padding: 10px 24px;">
+            <div class="mt-6 text-center">
+              <span style="font-weight: 500; font-size: 24px;">Вы записаны</span><br />
+              <span style="font-weight: 400; font-size: 15px;">Скоро мы вам позвоним</span>
+            </div>
+
+            <v-btn @click="isActive.value = false" class="bg-grey-lighten-3 mt-5">Закрыть</v-btn>
+          </v-card>
+        </div>
+      </template>
+    </v-dialog>
+
+    <v-dialog v-model="showErrorPopup">
+      <template v-slot:default="{ isActive }">
+        <div class="d-flex flex-column justify-center align-center" style="margin-top: -30px;">
+          <v-icon size="70" color="white" class="bg-red" :icon="mdiClose"
+            style="margin-bottom: -30px; z-index: 999; padding: 10px; border-radius: 999px;"></v-icon>
+
+          <v-card class="status-card" style="padding: 14px; border-radius: 16px;">
+            <div class="mt-5 text-center">
+              <span style="font-weight: 500; font-size: 24px;">Ошибка</span><br />
+              <span style="font-weight: 400; font-size: 15px;">Не удалось отправить форму</span>
+            </div>
+
+            <div class="d-flex mt-5 flex-wrap flex-row align-center justify-center" style="gap: 5px;">
+              <v-btn @click="submit()" :prepend-icon="mdiReload" class="bg-grey-lighten-3">Повторить</v-btn>
+              <v-btn @click="isActive.value = false" class="bg-grey-lighten-3">Закрыть</v-btn>
+            </div>
+          </v-card>
+        </div>
+      </template>
+    </v-dialog>
   </v-container>
-
-  <v-dialog v-model="showSuccessPopup" max-width="450">
-    <template v-slot:default="{ isActive }">
-      <div class="d-flex flex-column justify-center align-center" style="margin-top: -30px;">
-        <v-icon size="70" color="white" class="bg-green" :icon="mdiCheck"
-          style="margin-bottom: -30px; z-index: 999; padding: 10px; border-radius: 999px;"></v-icon>
-
-        <v-card class="status-card rounded-lg" style="padding: 10px 24px;">
-          <div class="mt-6 text-center">
-            <span style="font-weight: 500; font-size: 24px;">Вы записаны</span><br />
-            <span style="font-weight: 400; font-size: 15px;">Скоро мы вам позвоним</span>
-          </div>
-
-          <v-btn @click="isActive.value = false" class="bg-grey-lighten-3 mt-5">Закрыть</v-btn>
-        </v-card>
-      </div>
-    </template>
-  </v-dialog>
-
-  <v-dialog v-model="showErrorPopup">
-    <template v-slot:default="{ isActive }">
-      <div class="d-flex flex-column justify-center align-center" style="margin-top: -30px;">
-        <v-icon size="70" color="white" class="bg-red" :icon="mdiClose"
-          style="margin-bottom: -30px; z-index: 999; padding: 10px; border-radius: 999px;"></v-icon>
-
-        <v-card class="status-card" style="padding: 14px; border-radius: 16px;">
-          <div class="mt-5 text-center">
-            <span style="font-weight: 500; font-size: 24px;">Ошибка</span><br />
-            <span style="font-weight: 400; font-size: 15px;">Не удалось отправить форму</span>
-          </div>
-
-          <div class="d-flex mt-5 flex-wrap flex-row align-center justify-center" style="gap: 5px;">
-            <v-btn @click="submit()" :prepend-icon="mdiReload" class="bg-grey-lighten-3">Повторить</v-btn>
-            <v-btn @click="isActive.value = false" class="bg-grey-lighten-3">Закрыть</v-btn>
-          </div>
-        </v-card>
-      </div>
-    </template>
-  </v-dialog>
 </template>
 
 <style lang="scss" scoped>
@@ -278,6 +278,10 @@ onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: st
   flex-direction: column;
   justify-items: center;
   align-items: center;
+}
+
+.form {
+  padding: 0 5px 5px 5px;
 }
 
 .form>* {
