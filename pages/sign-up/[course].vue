@@ -50,8 +50,6 @@ let age = useField<number>('age')
 let phone = useField<string>('phone')
 let consent = useField<boolean>('consent')
 
-onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: string) => phone.value.value = value))
-
 let submited = ref(false)
 let loading = ref(false)
 let showSuccessPopup = ref(false)
@@ -102,18 +100,18 @@ function reset() {
   submited.value = false
   handleReset()
 }
+
+onMounted(() => usePhoneInput('phone-input', () => phone.value.value, (value: string) => phone.value.value = value))
 </script>
 
 <template>
   <v-container class="page-container">
     <BackButton />
 
-
-    <!-- <BlockTitle>Курс по {{ titleCourseNames.get(course as Course) }}</BlockTitle> -->
-
     <v-row>
-      <v-col cols="12" md="4">
-        <div class="card card-info" style="padding-top: 20px">
+      <v-col cols="12" md="6" lg="4">
+        <div class="card card-info">
+          <CourseHeader :course='course' />
           <v-form @submit.prevent="submit" class="form">
             <v-text-field v-model="fullname.value.value"
               :error-messages="submited ? fullname.errorMessage.value : undefined" label="Имя Фамилия"
@@ -132,57 +130,80 @@ function reset() {
               :error-messages="submited ? consent.errorMessage.value : undefined"
               :class="{ 'mt-3': submited && !!phone.errorMessage.value }" color="primary" density="comfortable">
               <template v-slot:label>
-                <div>Даю <a href="https://storage.yandexcloud.net/politica/Politica%20confidetcionalnosty.pdf"
-                    style="text-decoration: none;" target="_blank" @click.stop>согласие на
-                    обработку персональных данных</a></div>
+                <div>Даю <b><a href="https://storage.yandexcloud.net/politica/Politica%20confidetcionalnosty.pdf"
+                      style="text-decoration: none; color: black;" target="_blank" @click.stop>согласие на
+                      обработку персональных данных</a></b></div>
               </template>
             </v-checkbox>
 
             <v-btn type="submit" :loading="loading"
-              :class="{ 'w-100': true, 'mt-3': submited && !!consent.errorMessage.value, 'bg-primary': true }">Записаться</v-btn>
+              :class="{ 'w-100': true, 'mt-3': submited && !!consent.errorMessage.value, 'bg-accent': true }">Записаться</v-btn>
           </v-form>
         </div>
       </v-col>
-      <v-col cols="12" md="4">
-
-        <div class="card ">
-          <div class="course">
-            <div>
-              Стоимость занятия: {{ curentCourse?.price }} рублей
-            </div>
-            <div>
-              Продолжительность: {{ curentCourse?.duration }} минут
-            </div>
-            <div>
-              В неделю: {{ curentCourse?.frequency }} {{ curentCourse?.frequency == 1 ? "занятие" : "занятия" }}
-            </div>
-            <div>
-              Минимальный возраст: {{ curentCourse?.min_age }} лет
-            </div>
+      <v-col cols="12" md="6" lg="4">
+        <ClientOnly>
+          <div class="card ">
+            <div class="course d-flex flex-column justify-space-between">
+              <div>
+                <b> {{ curentCourse?.frequency }} {{ curentCourse?.frequency == 1 ? "занятие" : "занятия" }} в неделю
+                </b>
+                по <b>{{ curentCourse?.duration }} минут</b>, стоимость занятия <b>{{ curentCourse?.price }} рублей</b>.
+                Минимальный возраст <b>{{ curentCourse?.min_age }} лет</b>.
+              </div>
 
 
-            {{ curentCourse?.description }}
+              <div v-html="curentCourse?.schedule">
 
-            <h3>надо еще расписание занятий добавить и какой-то message для информированя об отменах</h3>
-            <div class="text-end">
-              <v-avatar :image="curentCourse?.teacher.avatar" size="60" class="ma-2"></v-avatar> <b>{{
-                curentCourse?.teacher.name }}</b>
+              </div>
+              <div>
+                <v-avatar :image="curentCourse?.teacher.avatar" size="60" class="ma-2"></v-avatar> <b>{{
+                  curentCourse?.teacher.name }}</b>
+              </div>
             </div>
           </div>
-        </div>
+        </ClientOnly>
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col cols="12" order-md="2" order-lg="1" md="6" lg="4">
+        <ClientOnly>
+          <div class="card ">
+            <div class="image" :style="{ backgroundImage: `url(${curentCourse?.image})` }">
 
-
-
-        <div class="card ">
-          <div class="image" :style="{ backgroundImage: `url(${curentCourse?.image})` }">
+            </div>
 
           </div>
-
-        </div>
+        </ClientOnly>
       </v-col>
+      <v-col cols="12" order-md="1" order-lg="2" md="12" lg="8">
+        <ClientOnly>
+          <div class="card ">
 
+            <div class="course">
+              <BlockTitle>Описание</BlockTitle>
+              <div v-html="curentCourse?.description">
+
+              </div>
+
+
+            </div>
+          </div>
+        </ClientOnly>
+      </v-col>
+      <v-col cols="12" order-md="3" order-lg="3" md="6" lg="4">
+        <ClientOnly>
+          <div class="card ">
+            <div class="course">
+              <BlockTitle>Объявление</BlockTitle>
+              <div class="d-flex">
+                <v-divider class="border-opacity-100" color="accent" thickness="5" vertical></v-divider>
+                <div v-html="curentCourse?.message" style="font-weight: 500; padding: 10px;">
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </ClientOnly>
+      </v-col>
     </v-row>
   </v-container>
 
@@ -230,12 +251,6 @@ function reset() {
 .card {
   max-width: 100%;
   height: 100%;
-
-  @media screen and (width >=960px) {
-    & {
-      min-width: 365px;
-    }
-  }
 }
 
 .course {
@@ -275,9 +290,7 @@ function reset() {
   gap: 10px;
 }
 
-.card-info {
-  padding: 18px;
-}
+
 
 .window-item {
   padding: 27px;

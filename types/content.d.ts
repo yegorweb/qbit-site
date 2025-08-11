@@ -11,6 +11,8 @@ declare global {
     image: string // url
     duration: number // минут в занятии
     frequency: number // занятий в неделю
+    message: string // html
+    schedule: string // html
   }
 	interface Content {
 	  webdevinfo: CourseContent

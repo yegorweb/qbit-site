@@ -8,6 +8,7 @@ import logoTorgOb from '~/assets/images/pos-qbit.png'
 import logoFormtomail from '~/assets/images/stamp.svg'
 import logoGlazovest from '~/assets/images/glazov-est.png'
 import logoUpVk from '~/assets/images/up-vk.png'
+import logoUk from '~/assets/images/dom.png'
 
 const projects = ref([
     {
@@ -37,7 +38,7 @@ const projects = ref([
         url: "https://up-vk.ru"
     },
     {
-        description: "автоматизация торговли",
+        description: "торговое оборудование",
         logo: logoTorgOb,
         url: "https://qbit-torgob.ru"
     },
@@ -51,8 +52,12 @@ const projects = ref([
         logo: logoLocation,
         url: "https://location21barbershop.ru"
     },
+      {
+        description: "управляющая компания",
+        logo: logoUk,
+        url: "https://upk-dom.ru"
+    },
 ])
-const duplicatedProjects = computed(() => [...projects.value, ...projects.value]);
 </script>
 <template>
     <v-col cols="12">
@@ -61,14 +66,14 @@ const duplicatedProjects = computed(() => [...projects.value, ...projects.value]
         </div>
         <div class="slider"
         :style="`
-        --width: 200px;
-        --height: 100px;
+        --width : 100px;
+        --height: 85px;
         --quantity: ${projects.length};
         `"
         >
             <div class="slider-content">
-                <a v-for="(project,index) in projects" :href="project.url" target="_blank" :style="`text-decoration: none; --position: ${index}`" class="slider-item">
-                    <div class="text-center"> <img :src="project.logo" alt=""></div>
+                <a v-for="(project,index) in projects" :href="project.url" target="_blank" :style="`text-decoration: none; --position: ${index}`" class="slider-item ml-4 mr-4">
+                    <div class="text-center image-container"> <img :src="project.logo" alt=""></div>
                     <div class="description"> {{ project.description }}</div>
                 </a>
             </div>
@@ -88,12 +93,22 @@ img {
 }
 
 .description {
-    font-size: clamp(0.625rem, -0.375rem + 5vw, 0.875rem);
+    font-size: clamp(0.525rem, -0.275rem + 5vw, 0.775rem);
     color: #3E3E3E;
     text-align: center;
-    line-height: clamp(0.625rem, -0.375rem + 5vw, 0.875rem);
+    line-height: clamp(0.525rem, -0.275rem + 5vw, 0.775rem);
+    height: 45px;
+    display: flex;
+    align-items: center;
+    width:min-content;
+    text-wrap: balance;
+    overflow-wrap: normal;
 }
-
+.image-container{
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
 .slider{
     width: 100%;
     height: var(--height);
@@ -106,7 +121,6 @@ img {
     );
 }
 .slider .slider-content{
-    display: flex;
     width: 100%;
     min-width: calc(var(--width) * var(--quantity));
     position: relative;
@@ -121,11 +135,15 @@ img {
 }
 .slider .slider-content .slider-item{
     width: var(--width);
+    height: var(--height);
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     left: 100%;
-    animation: autoRun 10s linear infinite;
+    animation: autoRun 20s linear infinite;
     transition: filter 0.5s;
-    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
+    animation-delay: calc( (20s / var(--quantity)) * (var(--position) - 1) - 20s)!important;
 }
 .slider:hover .slider-item{
     animation-play-state: paused!important;

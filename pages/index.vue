@@ -32,8 +32,8 @@ useHead({
 
 <template>
   <v-container class="page-container d-flex flex-column justify-space-between ">
-    <v-row class="flex-grow-0 mt-8">
-      <v-col cols="12" md="auto">
+    <v-row class="flex-grow-0 mt-6">
+      <v-col cols="12"  md="6" lg="4">
 
         <div class="card card-flex">
           <div class="course" id="web-dev" @click="navigateTo('/sign-up/web-dev')">
@@ -69,11 +69,6 @@ useHead({
 .card {
   max-width: 100%;
 
-  @media screen and (width >=960px) {
-    & {
-      min-width: 365px;
-    }
-  }
 }
 
 .card-flex {
