@@ -27,7 +27,8 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', href: '/logo.svg' },
       ]
-    }
+    },
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
 
   pwa: {
