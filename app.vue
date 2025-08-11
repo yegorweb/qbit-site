@@ -25,12 +25,6 @@ useHead({
       as: 'fetch',
       crossorigin: 'anonymous',
     },
-    {
-      rel:"preload",
-      href:"https://cdn.jsdelivr.net/npm/@mdi/font@6.6.96/css/materialdesignicons.min.css",
-      as:"style",
-      onload:"this.onload=null;this.rel='stylesheet'"
-    }
   ],
 })
 </script>
