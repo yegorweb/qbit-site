@@ -25,6 +25,7 @@ onMounted(() => {
         <Contacts></Contacts>
       </v-container>
     </div>
+    <NuxtLoadingIndicator color="#334064" />
 
     <NuxtPage />
 
