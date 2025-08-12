@@ -9,7 +9,7 @@ let router = useRouter()
   <div style="display: flex;" class="pb-2">
     <div 
       @click="router.back()" 
-      class="d-flex pt-1 pr-4 pb-1 cursor-pointer flex-row flex-nowrap align-center justify-start"
+      class="d-flex pt-1 pr-4 pb-1 cursor-pointer flex-row flex-nowrap align-center justify-start back"
     >
       <v-icon :icon="mdiArrowLeft" />
       
@@ -20,3 +20,9 @@ let router = useRouter()
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.back, .back * {
+  user-select: none;
+}
+</style>
