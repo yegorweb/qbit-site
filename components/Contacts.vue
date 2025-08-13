@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // @ts-ignore
-import VK from '../assets/images/vk.svg?component'
+import vk from '../assets/images/vk.svg'
 </script>
 <template>
 
@@ -23,7 +23,7 @@ import VK from '../assets/images/vk.svg?component'
         </div>
         <div class="ml-2">
             <a href="https://vk.com/qbitclub">
-                <VK width="24" height="24" />
+                <img :src="vk" width="24" height="24" />
             </a>
         </div>
 

@@ -145,7 +145,9 @@ img {
     transition: filter 0.5s;
     animation-delay: calc( (20s / var(--quantity)) * (var(--position) - 1) - 20s)!important;
 }
-.slider:hover .slider-item{
-    animation-play-state: paused!important;
+@media (hover: hover) and (pointer: fine) {
+  .slider:hover .slider-item {
+    animation-play-state: paused !important;
+  }
 }
 </style>

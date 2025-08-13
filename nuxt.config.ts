@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
     "@vite-pwa/nuxt",
-    "nuxt-svgo",
+ 
   ],
   css: ["~/assets/styles/main.scss"],
 

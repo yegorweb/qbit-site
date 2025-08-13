@@ -51,7 +51,7 @@
 
 .image {
   min-height: 300px;
-  background-image: url('../assets/images/about-qbit.jpg');
+  background-image: url('../assets/images/about-qbit.webp');
   border-radius: 8.59px;
   width: 100%;
   padding: 12px 18px;

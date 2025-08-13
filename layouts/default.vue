@@ -1,6 +1,15 @@
 <script lang="ts" setup>
-// @ts-ignore
-import QbitLogo from '../assets/images/qbit-logo.svg?skipsvgo'
+import qbitLogo from '../assets/images/qbit-logo.svg'
+useHead({
+  link: [
+    {
+      rel: 'preload',
+      href: qbitLogo,
+      as: 'image',
+      type: 'image/svg+xml'
+    }
+  ]
+})
 let backgroundColor = ref('none')
 onMounted(() => {
   const tick = () => {
@@ -20,25 +29,16 @@ onMounted(() => {
     <div class="header" :style="{ background: backgroundColor }">
       <v-container class="d-flex align-center justify-space-between user-select-none pt-2 pb-2"
         style="position: relative;">
-        <QbitLogo @click="navigateTo('/')" style="height: 100%; max-height: 56px; max-width: 40%; width: auto;" class="cursor-pointer mr-4" />
+        <img :src="qbitLogo" @click="navigateTo('/')" style="height: 100%; max-height: 56px; max-width: 40%; width: auto;" class="cursor-pointer mr-4" />
 
         <Contacts></Contacts>
       </v-container>
     </div>
-    <NuxtLoadingIndicator color="#334064" />
 
     <NuxtPage />
 
     <v-spacer></v-spacer>
 
-    <footer>
-      <v-container style="display: flex;">
-        <!-- <div style="margin: -6px">
-          <div @click="navigateTo('/agreement')" style="padding: 6px; cursor: pointer; color: #8E8E8E;">Согласие на
-            обработку персональных данных</div>
-        </div> -->
-      </v-container>
-    </footer>
   </v-app>
 </template>
 

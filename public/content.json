@@ -8,7 +8,7 @@
       "name": "Роман Грачев",
       "avatar": "/images/roman.webp"
     },
-    "image": "/images/web-img.jpg",
+    "image": "/images/web-img.webp",
     "duration": 90,
     "frequency": 1,
     "message": "Начнем занятия в середине сентября!",
@@ -21,9 +21,9 @@
     "description": "Рисуем в программе <b>Krita</b> на планшетах <b>Wacom</b>. Изучаем: &#9679;свет, тень, композиция; &#9679;пейзаж, природа, стиль; &#9679;примитивный персонаж; &#9679;семи-реализм персонаж; &#9679;фантастический дом; &#9679;концепт арт; &#9679;игровой интерфейс; &#9679;персонаж, маскот, локация; &#9679;анимация; &#9679;проект, продукт.",
     "teacher": {
       "name": "Юка Синицына",
-      "avatar": "/images/uca.jpg"
+      "avatar": "/images/uca.webp"
     },
-    "image": "/images/draw-img.jpg",
+    "image": "/images/draw-img.webp",
     "duration": 60,
     "frequency": 2,
     "message": "Начнем занятия в конце сентября!",
@@ -53,7 +53,7 @@
       "name": "Сергей Копысов",
       "avatar": "/images/sergey.webp"
     },
-    "image": "/images/java-img.jpg",
+    "image": "/images/java-img.webp",
     "duration": 90,
     "frequency": 1,
     "message": "Начнем занятия в середине сентября!",
