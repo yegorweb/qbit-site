@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
 let backgroundColor = ref('none')
-onMounted(() => {
+onMounted(async() => {
   const tick = () => {
     if (window.scrollY > 0) {
       backgroundColor.value = '#FFFFFF'
@@ -11,6 +11,7 @@ onMounted(() => {
   }
   tick()
   window.addEventListener('scroll', tick)
+  await nextTick()
 })
 </script>
 
