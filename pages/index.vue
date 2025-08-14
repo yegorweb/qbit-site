@@ -1,39 +1,39 @@
 <script setup lang="ts">
-import webDevImgUrl from '@/assets/images/web-dev.png'
-import drawingImgUrl from '@/assets/images/drawing.png'
-import scratchImgUrl from '@/assets/images/scratch.png'
-import javaImgUrl from '@/assets/images/java.png'
+import webDevImage from '@/assets/images/web-dev.png'
+import drawingImage from '@/assets/images/drawing.png'
+import scratchImage from '@/assets/images/scratch.png'
+import javaImage from '@/assets/images/java.png'
+import background from '@/assets/images/web-dev.png'
+
+const isLoaded = ref(false)
 
 useHead({
   link: [
-    {
-      rel: 'preload',
-      href: webDevImgUrl,
-      as: 'image',
-    },
-    {
-      rel: 'preload',
-      href: drawingImgUrl,
-      as: 'image',
-    },
-    {
-      rel: 'preload',
-      href: scratchImgUrl,
-      as: 'image',
-    },
-    {
-      rel: 'preload',
-      href: javaImgUrl,
-      as: 'image',
-    },
-  ],
+    { rel: 'preload', as: 'image', href: webDevImage },
+    { rel: 'preload', as: 'image', href: drawingImage },
+    { rel: 'preload', as: 'image', href: scratchImage },
+    { rel: 'preload', as: 'image', href: javaImage },
+    { rel: 'preload', as: 'image', href: background },
+    { rel: 'preload', as: 'image', href: '/images/roman.webp' }
+  ]
+})
+
+onMounted(() => {
+  if (document.readyState === 'complete') {
+    isLoaded.value = true
+  } else {
+    window.addEventListener('load', () => {
+      isLoaded.value = true
+    })
+  }
 })
 </script>
 
 <template>
-  <v-container class="page-container d-flex flex-column justify-space-between " style="padding-top: 12px !important;">
+  <v-container v-if="isLoaded" class="page-container d-flex flex-column justify-space-between "
+    style="padding-top: 12px !important;">
     <v-row class="flex-grow-0 mt-6">
-      <v-col cols="12"  md="6" lg="4">
+      <v-col cols="12" md="6" lg="4">
 
         <div class="card card-flex">
           <div class="course" id="web-dev" @click="navigateTo('/sign-up/web-dev')">
@@ -54,7 +54,39 @@ useHead({
           </div>
         </div>
       </v-col>
-      <AboutUs />
+      <v-col cols="12" md="6" lg="4">
+
+        <div class="card">
+          <div class="text-card">
+            <div class="course-name">О клубе Кубит</div>
+            <div class="course-description" style="font-style: italic;">
+              <div>
+
+                "Нет никакой волшебной палочки.
+                Только затраченное время и увлеченность может открыть путь к знаниям и
+                умениям.
+                Только ваши старания помогут вам стать художником, дизайнером или программистом.
+                Мы вместе пройдем по этому пути максимально интересно."
+
+              </div>
+            </div>
+            <div class="d-flex align-center justify-end">
+              <img src="/images/roman.webp" style="width: 60px; border-radius: 50px;" class="ma-2"></img> <b>Грачев
+                Роман</b>
+            </div>
+          </div>
+
+        </div>
+      </v-col>
+      <v-col cols="12" lg="4">
+
+        <div class="card ">
+          <div class=" image">
+
+          </div>
+
+        </div>
+      </v-col>
     </v-row>
     <v-row class="flex-grow-0">
       <Projects />
@@ -63,12 +95,38 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
-.page-container{
+.page-container {
   min-height: 90dvh;
-} 
+}
+
+.image {
+  min-height: 300px;
+  background-image: url('../assets/images/about-qbit.webp');
+  border-radius: 8.59px;
+  width: 100%;
+  padding: 12px 18px;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
 .card {
   max-width: 100%;
-
+  height: 100%;
+}
+.text-card{
+ background-color: #EFEFEF;
+  background-position: 100% 50%;
+  background-size: contain;
+  border-radius: 8.59px;
+  width: 100%;
+  padding: 12px 18px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-flex {
@@ -91,6 +149,7 @@ useHead({
   background-size: contain;
   border-radius: 8.59px;
   width: 100%;
+   height: 100%;
   padding: 12px 18px;
   display: flex;
   flex-direction: column;

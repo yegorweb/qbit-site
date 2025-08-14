@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import avatar from '../public/images/roman.webp'
+
 
 </script>
 
@@ -11,13 +11,13 @@ import avatar from '../public/images/roman.webp'
         <div class="course-name">О клубе Кубит</div>
         <div class="course-description">
           <div>
-            <i>
+            
               "Нет никакой волшебной палочки.
               Только затраченное время и увлеченность может открыть путь к знаниям и
               умениям.
               Только ваши старания помогут вам стать художником, дизайнером или программистом.
               Мы вместе пройдем по этому пути максимально интересно."
-            </i>
+         
           </div>
         </div>
         <div class="d-flex align-center justify-end">
@@ -42,12 +42,6 @@ import avatar from '../public/images/roman.webp'
 .card {
   max-width: 100%;
   height: 100%;
-
-  // @media screen and (width >=960px) {
-  //   & {
-  //     min-width: 365px;
-  //   }
-  // }
 }
 
 .image {
@@ -102,6 +96,7 @@ import avatar from '../public/images/roman.webp'
   &-description {
     font-size: clamp(0.625rem, -0.375rem + 5vw, 0.875rem);
     color: #3E3E3E;
+    font-style: italic;
   }
 
 }
