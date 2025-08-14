@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import avatar from '../public/images/roman.webp'
 
 </script>
 
@@ -19,8 +20,8 @@
             </i>
           </div>
         </div>
-        <div class="text-end">
-          <v-avatar image="/images/roman.webp" size="60" class="ma-2"></v-avatar> <b>Грачев Роман</b>
+        <div class="d-flex align-center justify-end">
+          <img src="/images/roman.webp" style="width: 60px; border-radius: 50px;" class="ma-2"></img> <b>Грачев Роман</b>
         </div>
       </div>
 

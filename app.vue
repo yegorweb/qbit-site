@@ -25,6 +25,12 @@ useHead({
       as: 'fetch',
       crossorigin: 'anonymous',
     },
+    {
+      rel: 'preload',
+      href: '/images/roman.webp',
+      as: 'image',
+
+    }
   ],
 })
 </script>
