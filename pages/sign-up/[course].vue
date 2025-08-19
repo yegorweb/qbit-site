@@ -7,11 +7,23 @@ let content = useContent()
 let curentCourse = ref<CourseContent>()
 let courseParam = useRoute().params.course
 let course = Array.isArray(courseParam) ? courseParam[0] : courseParam
-
 if (import.meta.client) {
   curentCourse.value = content.value[course as keyof Content]
 }
 
+useSeoMeta({
+  title: () => `Клуб Кубит${curentCourse?.value?.name ? ': '+curentCourse.value.name : ''}`,
+  description: () => `${curentCourse?.value?.description ? curentCourse.value.description : ''}`,
+  keywords: `${curentCourse?.value?.name ? curentCourse.value.name : ''}, ИТ, дизайн, программирование Удмуртия, программирование Глазов, компьютерные курсы`,
+})
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: `https://qbit-club.com/sign-up/${course}`
+    },
+  ],
+})
 // if (!courseNames.get(course)) showError({ statusCode: 404, message: 'Курс не найден' })
 
 let { handleSubmit, handleReset } = useForm({

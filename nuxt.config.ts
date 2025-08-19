@@ -26,14 +26,6 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "ru",
       },
-      title: "Клуб Кубит",
-      meta: [
-        {
-          name: "description",
-          content:
-            "Клуб программирования и дизайна Кубит. Находится в городе Глазов",
-        },
-      ],
       link: [{ rel: "icon", href: "/logo.svg" }],
     },
     pageTransition: { name: "page", mode: "out-in" },
@@ -102,7 +94,6 @@ export default defineNuxtConfig({
     groups: [
       {
         userAgent: "*",
-        disallow: ["/about-us"],
         allow: ["/", ...courses.map((course) => `/sign-up/${course}`)],
       },
     ],
@@ -110,11 +101,12 @@ export default defineNuxtConfig({
 
   sitemap: {
     urls: [
-      { loc: "/", priority: 1, changefreq: "daily" },
+      { loc: "/", priority: 1, changefreq: "daily", lastmod: new Date().toISOString() },
       ...(courses.map((course) => ({
         loc: `/sign-up/${course}`,
         priority: 0.8,
         changefreq: "daily",
+        lastmod: new Date().toISOString(),
       })) as SitemapUrlInput[]),
     ],
   },
@@ -162,5 +154,11 @@ export default defineNuxtConfig({
     },
     download: true,
     preload: true,
+  },
+
+  nitro: {
+    compressPublicAssets: {
+      brotli: true
+    }
   },
 });

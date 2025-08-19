@@ -1,6 +1,10 @@
 <script setup lang="ts">
 useSeoMeta({
   viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0',
+  charset: 'utf-8',
+  title: 'Клуб Кубит',
+  description: 'Клуб программирования и дизайна Кубит. Находится в городе Глазов',
+  keywords: 'курсы программирования Глазов, ИТ Удмуртия, Глазов ИТ, разработка приложений',
   ogTitle: 'Клуб Кубит',
   ogDescription: 'Клуб программирования и дизайна Кубит. Находится в городе Глазов',
   ogImage: 'https://qbit-club.com/og-image.jpg',
@@ -29,10 +33,16 @@ useHead({
       rel: 'preload',
       href: '/images/roman.webp',
       as: 'image',
-
     }
   ],
+  meta: [
+    {
+      name:"google-site-verification",
+      content:"shujXTJbF4t7_hxeajn6lv9W_98nAPZUzJK-xHKKxWY"
+    }
+  ]
 })
+// <meta name="google-site-verification" content="shujXTJbF4t7_hxeajn6lv9W_98nAPZUzJK-xHKKxWY" />
 </script>
 
 <template>
