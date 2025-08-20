@@ -65,14 +65,15 @@ const projects = ref([
             Сделано в Кубит
         </div>
         <div class="slider"
-        :style="`
-        --width : 100px;
-        --height: 85px;
-        --quantity: ${projects.length};
-        `"
         >
             <div class="slider-content">
-                <a v-for="(project,index) in projects" :href="project.url" target="_blank" :style="`text-decoration: none; --position: ${index}`" class="slider-item ml-4 mr-4">
+                <a v-for="(project,index) in projects" :href="project.url" target="_blank" style="text-decoration: none;" class="slider-item">
+                    <div class="text-center image-container"> <img :src="project.logo" alt=""></div>
+                    <div class="description"> {{ project.description }}</div>
+                </a>
+            </div>
+            <div class="slider-content" aria-hidden>
+                <a v-for="(project,index) in projects" :href="project.url" target="_blank" style="text-decoration: none;" class="slider-item">
                     <div class="text-center image-container"> <img :src="project.logo" alt=""></div>
                     <div class="description"> {{ project.description }}</div>
                 </a>
@@ -110,44 +111,44 @@ img {
     align-items: center;
 }
 .slider{
-    width: 100%;
-    height: var(--height);
+    margin: 0 auto;
+    padding: 20px 0;
+    // max-width: 700px;
     overflow: hidden;
+    display: flex;
     mask-image: linear-gradient(
-        to right,
-        transparent,
-        #000 10% 90%,
-        transparent
+    to right,
+    transparent,
+    #000 10% 90%,
+    transparent
     );
+    
+    > * {
+      flex: 0 0 100%;
+    }
 }
 .slider .slider-content{
-    width: 100%;
-    min-width: calc(var(--width) * var(--quantity));
-    position: relative;
+    display: flex;
+    gap: 20px;
+    /* Add padding to the right to create a gap between the last and first card. */
+    padding-right: 20px;
+    will-change: transform;
+    animation: scrolling 25s linear infinite;
 }
-@keyframes autoRun{
-    from {
-        left: 100%;
+  @keyframes scrolling {
+    0% {
+      transform: translateX(0);
     }
-    to {
-        left: calc(var(--width) * -1);
+    100% {
+      transform: translateX(-100%);
     }
-}
+  }
 .slider .slider-content .slider-item{
-    width: var(--width);
-    height: var(--height);
-    position: absolute;
+    width: 150px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     left: 100%;
-    animation: autoRun 20s linear infinite;
-    transition: filter 0.5s;
-    animation-delay: calc( (20s / var(--quantity)) * (var(--position) - 1) - 20s)!important;
-}
-@media (hover: hover) and (pointer: fine) {
-  .slider:hover .slider-item {
-    animation-play-state: paused !important;
-  }
 }
 </style>
