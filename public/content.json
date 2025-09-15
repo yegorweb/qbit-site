@@ -26,8 +26,8 @@
     "image": "/images/draw-img.webp",
     "duration": 60,
     "frequency": 2,
-    "message": "Начнем занятия в конце сентября!",
-    "schedule": "<div style='text-align:center'><b> Среда </b> </div> <div style='text-align:center'>группа 1 c 16.00 до 17.00 </div> <div style='text-align:center'> группа 2 c 17.00 до 18.00 </div> <div style='text-align:center'><b> Четверг </b> </div> <div style='text-align:center'>группа 1 c 16.00 до 17.00 </div> <div style='text-align:center'>группа 2 c 17.00 до 18.00 </div>"
+    "message": "Начнем занятия в начале октября! Только одна группа 10 человек. Свободных мест нет, но вы можете записаться в лист ожидания, если кто-то передумает, мы вам позвоним.",
+    "schedule": "<div style='text-align:center'><b> Среда </b> </div> <div style='text-align:center'>c 18.20 до 19.20 </div>  <div style='text-align:center'><b> Четверг </b> </div> <div style='text-align:center'>c 18.20 до 19.20 </div>"
   },
   "scratch": {
     "name": "Scratch",
@@ -41,7 +41,7 @@
     "image": "/images/scratch-img.webp",
     "duration": 45,
     "frequency": 1,
-    "message": "Начнем занятия в середине сентября!",
+    "message": "Начнем занятия в середине сентября! Свободных мест нет, но вы можете записаться в лист ожидания, если кто-то передумает, мы вам позвоним.",
     "schedule": "<div style='text-align:center'><b> Понедельник </b> </div> <div style='text-align:center'> c 16.30 до 17.15 </div>"
   },
   "java": {
@@ -56,7 +56,7 @@
     "image": "/images/java-img.webp",
     "duration": 90,
     "frequency": 1,
-    "message": "Начнем занятия в середине сентября!",
+    "message": "Начнем занятия в конце сентября! Свободных мест нет, но вы можете записаться в лист ожидания, если кто-то передумает, мы вам позвоним.",
     "schedule": "<div style='text-align:center'><b> Суббота </b> </div> <div style='text-align:center'> c 15.00 до 16.30 </div> <div style='text-align:center'> c 16.30 до 18.00 </div>"
   }
 }
