@@ -1,6 +1,6 @@
 {
   "web-dev": {
-    "name": "Web разработка",
+    "name": "Web разработка!",
     "price": 600,
     "min_age": 14,
     "description": "Делаем сайты и приложения. Изучаем фулстек веб разработку в стеке: <b>JS, CSS, HTML, Vue, Node, Express, MongoDB</b>. Учимся командной работе с использованием Git и Agile. Пройдем путь от базовых знаний через свой и командный проект к своему стартапу.",
@@ -11,7 +11,7 @@
     "image": "/images/web-img.webp",
     "duration": 90,
     "frequency": 1,
-    "message": "Начнем занятия в середине сентября!",
+    "message": "<b>Идут занятия! Можно присоединиться.</b>",
     "schedule": "<div style='text-align:center'><b> Вторник </b> </div> <div style='text-align:center'> c 16.30 до 18.00 </div>  "
   },
   "drawing": {
@@ -26,7 +26,7 @@
     "image": "/images/draw-img.webp",
     "duration": 60,
     "frequency": 2,
-    "message": "Начнем занятия в начале октября! Только одна группа 10 человек. Свободных мест нет, но вы можете записаться в лист ожидания, если кто-то передумает, мы вам позвоним.",
+    "message": "<b>Идут занятия!</b>",
     "schedule": "<div style='text-align:center'><b> Среда </b> </div> <div style='text-align:center'>c 18.20 до 19.20 </div>  <div style='text-align:center'><b> Четверг </b> </div> <div style='text-align:center'>c 18.20 до 19.20 </div>"
   },
   "scratch": {
@@ -41,7 +41,7 @@
     "image": "/images/scratch-img.webp",
     "duration": 45,
     "frequency": 1,
-    "message": "Начнем занятия в середине сентября! Свободных мест нет, но вы можете записаться в лист ожидания, если кто-то передумает, мы вам позвоним.",
+    "message": "<b>Идут занятия! Можно присоединиться.</b>",
     "schedule": "<div style='text-align:center'><b> Понедельник </b> </div> <div style='text-align:center'> c 16.30 до 17.15 </div>"
   },
   "java": {
@@ -56,7 +56,7 @@
     "image": "/images/java-img.webp",
     "duration": 90,
     "frequency": 1,
-    "message": "Начнем занятия в конце сентября! Свободных мест нет, но вы можете записаться в лист ожидания, если кто-то передумает, мы вам позвоним.",
+    "message": "<b>Идут занятия! Можно присоединиться.</b>",
     "schedule": "<div style='text-align:center'><b> Суббота </b> </div> <div style='text-align:center'> c 15.00 до 16.30 </div> <div style='text-align:center'> c 16.30 до 18.00 </div>"
   }
 }

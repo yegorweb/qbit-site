@@ -9,6 +9,9 @@ import logoFormtomail from '~/assets/images/stamp.svg?url'
 import logoGlazovest from '~/assets/images/glazov-est.png'
 import logoUpVk from '~/assets/images/up-vk.png'
 import logoUk from '~/assets/images/dom.png'
+import logoAtmosphere from '~/assets/images/atmosphere.png'
+import logoOwnbrain from '~/assets/images/ownbrain.png'
+import bpm from '~/assets/images/bpm.svg?url'
 
 const projects = ref([
     {
@@ -56,6 +59,22 @@ const projects = ref([
         description: "управляющая компания",
         logo: logoUk,
         url: "https://upk-dom.ru"
+    },
+        {
+        description: "фитнес клуб",
+        logo: logoAtmosphere,
+        url: "https://atmosphere18.ru"
+    },
+      {
+        description: "проведение игр",
+        logo: logoOwnbrain,
+        url: "https://ownbrain.ru"
+    },
+ 
+     {
+        description: "внедрение ELMA365",
+        logo: bpm,
+        url: "https://elmamaster.ru"
     },
 ])
 </script>
