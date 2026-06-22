@@ -1,18 +1,18 @@
 {
   "web-dev": {
-    "name": "Web разработка!",
-    "price": 600,
+    "name": "Web разработка - летний экспресс курс",
+    "price": 300,
     "min_age": 14,
-    "description": "Делаем сайты и приложения. Изучаем фулстек веб разработку в стеке: <b>JS, CSS, HTML, Vue, Node, Express, MongoDB</b>. Учимся командной работе с использованием Git и Agile. Пройдем путь от базовых знаний через свой и командный проект к своему стартапу.",
+    "description": "Экспресс курс языков программирования и технологий для разработки сайтов и приложений. Изучаем фулстек веб разработку в стеке: <b>JS, CSS, HTML, Vue, Node, Express, MongoDB</b>.  За 10 занятий изучими технологии для создания сайтов и приложений с базой данных и бекэндом.",
     "teacher": {
       "name": "Роман Грачев",
       "avatar": "/images/roman.webp"
     },
     "image": "/images/web-img.webp",
     "duration": 90,
-    "frequency": 1,
-    "message": "<b>Идут занятия! Можно присоединиться.</b>",
-    "schedule": "<div style='text-align:center'><b> Вторник </b> </div> <div style='text-align:center'> c 16.30 до 18.00 </div>  "
+    "frequency": 2,
+    "message": "<b>Первое занятие 26 июня</b>",
+    "schedule": "<div style='text-align:center'><b> Вторник, пятница </b> </div> <div style='text-align:center'> c 16.00 до 17.30 </div>  "
   },
   "drawing": {
     "name": "Цифровая живопись",

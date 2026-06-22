@@ -43,7 +43,7 @@ const projects = ref([
     {
         description: "торговое оборудование",
         logo: logoTorgOb,
-        url: "https://qbit-torgob.ru"
+        url: "https://kassa.plpo.ru"
     },
     {
         description: "библиотека",
